@@ -302,8 +302,9 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: var(--category-padding, 1.5rem);
-    background-size: cover;
+    background-size: 100% auto;
     background-position: center;
+    background-repeat: no-repeat;
     cursor: pointer;
     position: relative;
     min-height: 80px;
