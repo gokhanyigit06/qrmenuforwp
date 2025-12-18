@@ -170,7 +170,8 @@ body {
     overflow: hidden;
     width: 100%;
     max-width: 1400px;
-    margin: 0 auto var(--spacing-lg) auto;
+    margin: var(--spacing-lg) auto;
+    border-radius: var(--border-radius);
 }
 
 .banner-slider {
@@ -316,8 +317,8 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: var(--spacing-md) var(--spacing-lg);
-    background-size: auto 100%;
-    background-position: right center;
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
     background-color: #6b6b5a;
     cursor: pointer;
