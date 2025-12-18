@@ -63,8 +63,8 @@ $facebookLink = isset($theme_settings['facebookLink']) ? $theme_settings['facebo
     <!-- Menu Accordion -->
     <?php
     $viewMode = 'grid';
-    if ($themeSettings && isset($themeSettings['viewMode'])) {
-        $viewMode = $themeSettings['viewMode'];
+    if (isset($theme_settings) && isset($theme_settings['viewMode'])) {
+        $viewMode = $theme_settings['viewMode'];
     }
     ?>
     <main class="menu-accordion" id="menuAccordion" data-view="<?php echo esc_attr($viewMode); ?>">
