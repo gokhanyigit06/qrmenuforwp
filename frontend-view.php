@@ -44,7 +44,8 @@ $facebookLink = isset($theme_settings['facebookLink']) ? $theme_settings['facebo
         if (!$banners)
             $banners = [];
         $activeBanners = array_filter($banners, function ($b) {
-            return !empty($b['active']); });
+            return !empty($b['active']);
+        });
         $activeBanners = array_values($activeBanners); // Re-index
         $bannerCount = count($activeBanners);
         ?>
@@ -52,15 +53,15 @@ $facebookLink = isset($theme_settings['facebookLink']) ? $theme_settings['facebo
             <section class="hero-banner">
                 <div class="banner-slider">
                     <?php foreach ($activeBanners as $index => $banner): ?>
-                        <div class="banner-slide <?php echo $index === 0 ? 'active' : ''; ?>" style="<?php
-                                 if (!empty($banner['width']))
-                                     echo 'max-width: ' . intval($banner['width']) . 'px;';
-                                 if (!empty($banner['height']))
-                                     echo 'height: ' . intval($banner['height']) . 'px;';
-                                 ?>">
+                        <div class="banner-slide <?php echo $index === 0 ? 'active' : ''; ?>">
                             <?php if (!empty($banner['image'])): ?>
-                                <img src="<?php echo esc_url($banner['image']); ?>" alt="<?php echo esc_attr($banner['title']); ?>"
-                                    class="banner-image" style="width: 100%; height: 100%; object-fit: cover;">
+                                <picture>
+                                    <?php if (!empty($banner['imageMobile'])): ?>
+                                        <source media="(max-width: 768px)" srcset="<?php echo esc_url($banner['imageMobile']); ?>">
+                                    <?php endif; ?>
+                                    <img src="<?php echo esc_url($banner['image']); ?>"
+                                        alt="<?php echo esc_attr($banner['title'] ?? 'Banner'); ?>" class="banner-image">
+                                </picture>
                             <?php else: ?>
                                 <div class="banner-content"
                                     style="background: <?php echo esc_attr($banner['bgColor'] ?? '#C84B31'); ?>;">

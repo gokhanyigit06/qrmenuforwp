@@ -975,25 +975,25 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Görsel URL</label>
+                    <label>🖥️ Masaüstü Görsel</label>
                     <div style="display: flex; gap: 0.5rem;">
                         <input type="text" id="bannerImage" placeholder="https://..." style="flex: 1;">
                         <button type="button" class="btn-secondary"
                             onclick="openMediaUploader('bannerImage')">Seç</button>
                     </div>
-                    <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">📐 Önerilen boyut: <strong>1400 x 400
+                    <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">📐 Önerilen: <strong>1400 x 400
                             piksel</strong></p>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div class="form-group">
-                        <label>Genişlik (px)</label>
-                        <input type="number" id="bannerWidth" placeholder="Otomatik" min="100" max="2000">
+                <div class="form-group">
+                    <label>📱 Mobil Görsel (Opsiyonel)</label>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="text" id="bannerImageMobile" placeholder="https://..." style="flex: 1;">
+                        <button type="button" class="btn-secondary"
+                            onclick="openMediaUploader('bannerImageMobile')">Seç</button>
                     </div>
-                    <div class="form-group">
-                        <label>Yükseklik (px)</label>
-                        <input type="number" id="bannerHeight" placeholder="Otomatik" min="50" max="800">
-                    </div>
+                    <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">📐 Önerilen: <strong>600 x 400
+                            piksel</strong> (boş bırakılırsa masaüstü kullanılır)</p>
                 </div>
 
                 <div class="form-group">

@@ -772,8 +772,7 @@ function editBanner(id) {
     document.getElementById('bannerDiscount').value = currentEditingBanner.discount || '';
     document.getElementById('bannerBgColor').value = currentEditingBanner.bgColor;
     document.getElementById('bannerImage').value = currentEditingBanner.image || '';
-    document.getElementById('bannerWidth').value = currentEditingBanner.width || '';
-    document.getElementById('bannerHeight').value = currentEditingBanner.height || '';
+    document.getElementById('bannerImageMobile').value = currentEditingBanner.imageMobile || '';
     document.getElementById('bannerActive').checked = currentEditingBanner.active;
 
     document.getElementById('bannerModal').classList.add('active');
@@ -799,8 +798,7 @@ document.getElementById('bannerForm')?.addEventListener('submit', (e) => {
         discount: parseInt(document.getElementById('bannerDiscount').value) || 0,
         bgColor: document.getElementById('bannerBgColor').value,
         image: document.getElementById('bannerImage').value,
-        width: parseInt(document.getElementById('bannerWidth').value) || 0,
-        height: parseInt(document.getElementById('bannerHeight').value) || 0,
+        imageMobile: document.getElementById('bannerImageMobile').value,
         active: document.getElementById('bannerActive').checked
     };
 

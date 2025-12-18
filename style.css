@@ -165,15 +165,13 @@ body {
 /* ==================== Hero Banner ==================== */
 .hero-banner {
     position: relative;
-    background: linear-gradient(135deg, #C84B31 0%, #D2691E 100%);
     padding: 0;
     overflow: hidden;
     width: 100%;
     max-width: 1400px;
     margin: var(--spacing-lg) auto;
     border-radius: var(--border-radius);
-    touch-action: pan-x;
-    -webkit-overflow-scrolling: touch;
+    background: transparent;
 }
 
 .banner-slider {
@@ -185,22 +183,20 @@ body {
 .banner-slide {
     display: none;
     width: 100%;
-    min-height: 200px;
-    max-height: 400px;
-    position: relative;
 }
 
 .banner-slide.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+}
+
+.banner-slide picture {
+    display: block;
+    width: 100%;
 }
 
 .banner-slide img.banner-image {
     width: 100%;
     height: auto;
-    max-height: 400px;
-    object-fit: cover;
     display: block;
 }
 
@@ -286,20 +282,25 @@ body {
     display: flex;
     justify-content: center;
     gap: var(--spacing-sm);
-    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md) 0;
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all var(--transition-normal);
 }
 
+.dot:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
 .dot.active {
-    background: var(--text-white);
+    background: var(--primary-color, #C84B31);
     transform: scale(1.2);
 }
 
