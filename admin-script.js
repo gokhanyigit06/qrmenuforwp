@@ -1102,6 +1102,13 @@ document.querySelectorAll('.modal-overlay').forEach(overlay => {
 });
 
 // ==================== Theme Settings ====================
+function toggleCustomWidth() {
+    const layout = document.getElementById('settingLayoutWidth').value;
+    const group = document.getElementById('customWidthGroup');
+    if (group) {
+        group.style.display = layout === 'custom' ? 'block' : 'none';
+    }
+}
 function saveThemeSettings() {
     const settings = {
         logoType: document.getElementById('settingLogoType').value,
@@ -1113,6 +1120,7 @@ function saveThemeSettings() {
         fontDisplay: document.getElementById('settingFontDisplay').value,
 
         layoutWidth: document.getElementById('settingLayoutWidth').value,
+        customWidth: document.getElementById('settingCustomWidth')?.value || '90',
         headerFontSize: document.getElementById('settingHeaderFontSize').value,
         headerSpacing: document.getElementById('settingHeaderSpacing').value,
 
@@ -1126,7 +1134,13 @@ function saveThemeSettings() {
         footerTextColor: document.getElementById('settingFooterTextColor').value,
         footerContact: document.getElementById('settingFooterContact').value,
         footerHours: document.getElementById('settingFooterHours').value,
-        footerCopyright: document.getElementById('settingFooterCopyright').value
+        footerCopyright: document.getElementById('settingFooterCopyright').value,
+
+        // Social & Get in Touch
+        getInTouchText: document.getElementById('settingGetInTouchText')?.value || 'İLETİŞİM',
+        getInTouchLink: document.getElementById('settingGetInTouchLink')?.value || '#contact',
+        instagramLink: document.getElementById('settingInstagramLink')?.value || '',
+        facebookLink: document.getElementById('settingFacebookLink')?.value || ''
     };
 
     adminThemeSettings = settings;
@@ -1185,6 +1199,18 @@ function loadThemeSettings() {
     if (adminThemeSettings.footerContact) document.getElementById('settingFooterContact').value = adminThemeSettings.footerContact;
     if (adminThemeSettings.footerHours) document.getElementById('settingFooterHours').value = adminThemeSettings.footerHours;
     if (adminThemeSettings.footerCopyright) document.getElementById('settingFooterCopyright').value = adminThemeSettings.footerCopyright;
+
+    // Social & Get in Touch
+    if (adminThemeSettings.getInTouchText && document.getElementById('settingGetInTouchText'))
+        document.getElementById('settingGetInTouchText').value = adminThemeSettings.getInTouchText;
+    if (adminThemeSettings.getInTouchLink && document.getElementById('settingGetInTouchLink'))
+        document.getElementById('settingGetInTouchLink').value = adminThemeSettings.getInTouchLink;
+    if (adminThemeSettings.instagramLink && document.getElementById('settingInstagramLink'))
+        document.getElementById('settingInstagramLink').value = adminThemeSettings.instagramLink;
+    if (adminThemeSettings.facebookLink && document.getElementById('settingFacebookLink'))
+        document.getElementById('settingFacebookLink').value = adminThemeSettings.facebookLink;
+
+    toggleCustomWidth();
 }
 
 // ==================== Media Uploader ====================

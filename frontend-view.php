@@ -1,57 +1,63 @@
-<?php 
-if (!isset($layout)) $layout = 'full';
-if (!isset($theme_settings)) $theme_settings = [];
+<?php
+if (!isset($layout))
+    $layout = 'full';
+if (!isset($theme_settings))
+    $theme_settings = [];
 
 $logoType = isset($theme_settings['logoType']) ? $theme_settings['logoType'] : 'text';
 $logoText = !empty($theme_settings['logoText']) ? $theme_settings['logoText'] : "MICKEY'S";
 $logoImage = isset($theme_settings['logoImage']) ? $theme_settings['logoImage'] : '';
+
+// Get in Touch settings
+$getInTouchText = isset($theme_settings['getInTouchText']) ? $theme_settings['getInTouchText'] : 'GET IN TOUCH';
+$getInTouchLink = isset($theme_settings['getInTouchLink']) ? $theme_settings['getInTouchLink'] : '#contact';
+$instagramLink = isset($theme_settings['instagramLink']) ? $theme_settings['instagramLink'] : '#';
+$facebookLink = isset($theme_settings['facebookLink']) ? $theme_settings['facebookLink'] : '#';
 ?>
 <div class="mickeys-menu-wrapper <?php echo $layout === 'embed' ? 'embed-mode' : ''; ?>">
     <?php if ($layout === 'full'): ?>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo-container">
-                <?php if ($logoType === 'image' && !empty($logoImage)): ?>
-                    <img src="<?php echo esc_url($logoImage); ?>" alt="<?php echo esc_attr($logoText); ?>" class="logo-image" style="max-height: 50px;">
-                <?php else: ?>
-                    <h1 class="logo"><?php echo esc_html($logoText); ?></h1>
-                <?php endif; ?>
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <?php if ($logoType === 'image' && !empty($logoImage)): ?>
+                        <img src="<?php echo esc_url($logoImage); ?>" alt="<?php echo esc_attr($logoText); ?>"
+                            class="logo-image" style="max-height: 50px;">
+                    <?php else: ?>
+                        <h1 class="logo"><?php echo esc_html($logoText); ?></h1>
+                    <?php endif; ?>
+                </div>
+                <button class="allergen-btn" id="allergenBtn">
+                    <span data-lang-tr="ALERJENLER" data-lang-en="ALLERGENS">ALERJENLER</span>
+                </button>
+                <a href="<?php echo esc_url($getInTouchLink); ?>" class="contact-btn" id="contactBtn">
+                    <span data-lang-tr="<?php echo esc_attr($getInTouchText); ?>"
+                        data-lang-en="GET IN TOUCH"><?php echo esc_html($getInTouchText); ?></span>
+                </a>
             </div>
-            <button class="allergen-btn" id="allergenBtn">
-                ALERJENLER
-            </button>
-            <div class="lang-switcher" style="display: flex; gap: 5px; margin: 0 10px;">
-                <button onclick="toggleLanguage('tr')" class="lang-btn" title="Türkçe" style="background:none; border:none; font-size:1.5rem; cursor:pointer; padding:0;">🇹🇷</button>
-                <button onclick="toggleLanguage('en')" class="lang-btn" title="English" style="background:none; border:none; font-size:1.5rem; cursor:pointer; padding:0;">🇬🇧</button>
-            </div>
-            <button class="contact-btn" id="contactBtn">
-                GET IN TOUCH
-            </button>
-        </div>
-    </header>
+        </header>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
-        <div class="banner-slider">
-            <div class="banner-slide active">
-                <div class="banner-content">
-                    <div class="banner-pattern"></div>
-                    <h2 class="banner-title">Her gün 14:00-19:00 arası tüm kokteyllerde</h2>
-                    <div class="banner-discount">%20 <span>İNDİRİM</span></div>
-                    <div class="banner-drinks">
-                        <div class="drink-icon">🍹</div>
-                        <div class="drink-icon">🍸</div>
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="banner-slider">
+                <div class="banner-slide active">
+                    <div class="banner-content">
+                        <div class="banner-pattern"></div>
+                        <h2 class="banner-title">Her gün 14:00-19:00 arası tüm kokteyllerde</h2>
+                        <div class="banner-discount">%20 <span>İNDİRİM</span></div>
+                        <div class="banner-drinks">
+                            <div class="drink-icon">🍹</div>
+                            <div class="drink-icon">🍸</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="banner-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </section>
+            <div class="banner-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
     <?php endif; ?>
 
     <!-- Menu Accordion -->
@@ -86,26 +92,15 @@ $logoImage = isset($theme_settings['logoImage']) ? $theme_settings['logoImage'] 
                 </svg>
             </button>
             <div class="modal-body">
-                <h2 class="allergen-title">Alerjen Bilgileri</h2>
-                <div class="allergen-list">
-                    <div class="allergen-item">
-                        <span class="allergen-icon">🥜</span>
-                        <div>
-                            <h3>Fındık ve Yerfıstığı</h3>
-                            <p>Bazı ürünlerimizde fındık, ceviz ve yerfıstığı bulunmaktadır.</p>
-                        </div>
-                    </div>
-                    <div class="allergen-item">
-                        <span class="allergen-icon">🥛</span>
-                        <div>
-                            <h3>Süt Ürünleri</h3>
-                            <p>Peynir, krema ve süt içeren ürünlerimiz mevcuttur.</p>
-                        </div>
+                <h2 class="allergen-title" data-lang-tr="Alerjen Bilgileri" data-lang-en="Allergen Information">Alerjen
+                    Bilgileri</h2>
                 <div class="allergens-grid" id="allergensGrid">
                     <!-- Populated by JS -->
                 </div>
                 <p class="allergen-note">
-                    ⚠️ Alerji veya özel beslenme ihtiyacınız varsa lütfen garsonlarımıza danışınız.
+                    <span data-lang-tr="⚠️ Alerji veya özel beslenme ihtiyacınız varsa lütfen garsonlarımıza danışınız."
+                        data-lang-en="⚠️ If you have any allergies or special dietary needs, please consult our staff.">⚠️
+                        Alerji veya özel beslenme ihtiyacınız varsa lütfen garsonlarımıza danışınız.</span>
                 </p>
             </div>
         </div>
@@ -113,34 +108,39 @@ $logoImage = isset($theme_settings['logoImage']) ? $theme_settings['logoImage'] 
 
     <!-- Footer -->
     <?php if ($layout === 'full'): ?>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 3rem 0;">
-                <div class="footer-col">
-                    <h3>Contact</h3>
-                    <p><?php echo isset($theme_settings['footerContact']) && !empty($theme_settings['footerContact']) ? nl2br(esc_html($theme_settings['footerContact'])) : '+90 555 123 45 67<br>Minerva Han, Karakoy'; ?></p>
-                </div>
-                <div class="footer-col">
-                    <h3>Hours</h3>
-                    <p><?php echo isset($theme_settings['footerHours']) && !empty($theme_settings['footerHours']) ? nl2br(esc_html($theme_settings['footerHours'])) : 'Mon - Sun: 10:00 - 02:00'; ?></p>
-                </div>
-                <div class="footer-col">
-                    <h3>Get in Touch</h3>
-                    <div class="social-links" style="display: flex; gap: 1rem; margin-bottom: 1rem;">
-                        <a href="#" class="social-link" style="width: 40px; height: 40px; border: 1px solid currentColor; border-radius: 50%; display: flex; align-items: center; justify-content: center;">IG</a>
-                        <a href="#" class="social-link" style="width: 40px; height: 40px; border: 1px solid currentColor; border-radius: 50%; display: flex; align-items: center; justify-content: center;">FB</a>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3 data-lang-tr="İletişim" data-lang-en="Contact">İletişim</h3>
+                        <p><?php echo isset($theme_settings['footerContact']) && !empty($theme_settings['footerContact']) ? nl2br(esc_html($theme_settings['footerContact'])) : '+90 555 123 45 67<br>Minerva Han, Karakoy'; ?>
+                        </p>
                     </div>
-                    <!-- Language Switcher Footer -->
-                    <div class="lang-switcher" style="display: flex; gap: 10px;">
-                        <button onclick="toggleLanguage('tr')" class="lang-btn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; padding:0;">🇹🇷</button>
-                        <button onclick="toggleLanguage('en')" class="lang-btn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; padding:0;">🇬🇧</button>
+                    <div class="footer-col">
+                        <h3 data-lang-tr="Çalışma Saatleri" data-lang-en="Hours">Çalışma Saatleri</h3>
+                        <p><?php echo isset($theme_settings['footerHours']) && !empty($theme_settings['footerHours']) ? nl2br(esc_html($theme_settings['footerHours'])) : 'Pzt - Paz: 10:00 - 02:00'; ?>
+                        </p>
                     </div>
+                    <div class="footer-col">
+                        <h3 data-lang-tr="Bize Ulaşın" data-lang-en="Get in Touch">Bize Ulaşın</h3>
+                        <div class="social-links">
+                            <a href="<?php echo esc_url($instagramLink); ?>" class="social-link" target="_blank"
+                                rel="noopener">IG</a>
+                            <a href="<?php echo esc_url($facebookLink); ?>" class="social-link" target="_blank"
+                                rel="noopener">FB</a>
+                        </div>
+                        <!-- Language Switcher Footer -->
+                        <div class="lang-switcher">
+                            <button onclick="toggleLanguage('tr')" class="lang-btn" title="Türkçe">🇹🇷</button>
+                            <button onclick="toggleLanguage('en')" class="lang-btn" title="English">🇬🇧</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p><?php echo isset($theme_settings['footerCopyright']) && !empty($theme_settings['footerCopyright']) ? esc_html($theme_settings['footerCopyright']) : '&copy; 2024 Mickey\'s Restaurant'; ?>
+                    </p>
                 </div>
             </div>
-            <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center;">
-                <p><?php echo isset($theme_settings['footerCopyright']) && !empty($theme_settings['footerCopyright']) ? esc_html($theme_settings['footerCopyright']) : '&copy; 2024 Mickey\'s Restaurant'; ?></p>
-            </div>
-        </div>
-    </footer>
+        </footer>
     <?php endif; ?>
 </div>

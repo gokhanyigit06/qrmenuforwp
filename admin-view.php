@@ -62,7 +62,9 @@
             <button class="nav-item" data-section="settings">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="3"></circle>
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                    </path>
                 </svg>
                 Görsel Düzenlemeler
             </button>
@@ -77,7 +79,8 @@
                 <h2 class="section-title">Ürün Yönetimi</h2>
                 <div class="header-actions" style="display: flex; gap: 0.5rem;">
                     <button class="btn-secondary" onclick="exportToExcel()" title="Excel İndir">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>
                             <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -85,7 +88,8 @@
                         Excel
                     </button>
                     <button class="btn-primary" id="addProductBtn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <line x1="12" y1="5" x2="12" y2="19" />
                             <line x1="5" y1="12" x2="19" y2="12" />
                         </svg>
@@ -119,7 +123,8 @@
                 </select>
             </div>
 
-            <div class="bulk-actions" style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: center; background: #fff; padding: 1rem; border-radius: 8px; border: 1px solid #eee;">
+            <div class="bulk-actions"
+                style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: center; background: #fff; padding: 1rem; border-radius: 8px; border: 1px solid #eee;">
                 <select id="bulkActionSelect" style="padding: 0.5rem;">
                     <option value="">Toplu İşlem Seç</option>
                     <option value="delete">Seçilenleri Sil</option>
@@ -134,7 +139,8 @@
                 <table id="productsTable">
                     <thead>
                         <tr>
-                            <th style="width: 40px;"><input type="checkbox" id="selectAllProducts" onchange="toggleSelectAll(this)"></th>
+                            <th style="width: 40px;"><input type="checkbox" id="selectAllProducts"
+                                    onchange="toggleSelectAll(this)"></th>
                             <th>ID</th>
                             <th>Görsel</th>
                             <th>Ürün Adı</th>
@@ -149,7 +155,8 @@
                     </tbody>
                 </table>
             </div>
-            <div id="productPagination" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-top: 1rem;">
+            <div id="productPagination"
+                style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-top: 1rem;">
                 <!-- JS will populate -->
             </div>
         </section>
@@ -418,10 +425,11 @@
             </div>
 
             <div class="form-grid" style="display: block;">
-                <div class="excel-card" style="text-align: left; max-width: 800px; margin: 0 auto; background: var(--bg-secondary);">
+                <div class="excel-card"
+                    style="text-align: left; max-width: 800px; margin: 0 auto; background: var(--bg-secondary);">
                     <h3>Tema Ayarları</h3>
                     <p>Menü görünümünü özelleştirin. Fontlar ve renkler tüm menüde geçerli olacaktır.</p>
-                    
+
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Logo Tipi</label>
@@ -438,7 +446,8 @@
                             <label>Logo Görseli</label>
                             <div style="display: flex; gap: 0.5rem;">
                                 <input type="text" id="settingLogoImage" placeholder="https://...">
-                                <button type="button" class="btn-secondary" onclick="openMediaUploader('settingLogoImage')">Seç</button>
+                                <button type="button" class="btn-secondary"
+                                    onclick="openMediaUploader('settingLogoImage')">Seç</button>
                             </div>
                         </div>
 
@@ -474,70 +483,93 @@
                                 <option value="Bebas Neue">Bebas Neue</option>
                             </select>
                         </div>
-                        
-                        <h4 style="margin-top: 1.5rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #333;">Yerleşim & Tipografi</h4>
+
+                        <h4
+                            style="margin-top: 1.5rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #333;">
+                            Yerleşim & Tipografi</h4>
                         <div class="form-group">
-                             <label>Sayfa Genişliği</label>
-                             <select id="settingLayoutWidth">
-                                 <option value="full">Tam Genişlik (Full)</option>
-                                 <option value="container">Kutulu (1200px)</option>
-                                 <option value="narrow">Dar (800px)</option>
-                             </select>
+                            <label>Sayfa Genişliği</label>
+                            <select id="settingLayoutWidth" onchange="toggleCustomWidth()">
+                                <option value="full">Tam Genişlik (Full)</option>
+                                <option value="container">Kutulu (1200px)</option>
+                                <option value="narrow">Dar (800px)</option>
+                                <option value="custom">Özel Genişlik (%)</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="customWidthGroup" style="display: none;">
+                            <label>Özel Genişlik (%)</label>
+                            <input type="number" id="settingCustomWidth" min="50" max="100" value="90" placeholder="90">
                         </div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                             <div class="form-group">
-                                 <label>Başlık Boyutu (px)</label>
-                                 <input type="number" id="settingHeaderFontSize" value="24" placeholder="24">
+                                <label>Başlık Boyutu (px)</label>
+                                <input type="number" id="settingHeaderFontSize" value="24" placeholder="24">
                             </div>
                             <div class="form-group">
-                                 <label>Harf Aralığı (px)</label>
-                                 <input type="number" id="settingHeaderSpacing" value="0" step="0.5" placeholder="0">
+                                <label>Harf Aralığı (px)</label>
+                                <input type="number" id="settingHeaderSpacing" value="0" step="0.5" placeholder="0">
                             </div>
                         </div>
 
-                        <h4 style="margin-top: 1.5rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #333;">Renkler</h4>
+                        <h4
+                            style="margin-top: 1.5rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #333;">
+                            Renkler</h4>
                         <div class="form-group">
                             <label>Ana Renk (Primary)</label>
                             <div style="display: flex; gap: 0.5rem; align-items: center;">
-                                <input type="color" id="settingPrimaryColor" value="#8B4513" style="width: 50px; padding: 0; border: none; height: 40px;">
-                                <input type="text" id="settingPrimaryColorText" value="#8B4513" style="flex: 1;" onchange="document.getElementById('settingPrimaryColor').value = this.value; this.value = this.value.toUpperCase();">
+                                <input type="color" id="settingPrimaryColor" value="#8B4513"
+                                    style="width: 50px; padding: 0; border: none; height: 40px;">
+                                <input type="text" id="settingPrimaryColorText" value="#8B4513" style="flex: 1;"
+                                    onchange="document.getElementById('settingPrimaryColor').value = this.value; this.value = this.value.toUpperCase();">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Vurgu Rengi (Accent)</label>
                             <div style="display: flex; gap: 0.5rem; align-items: center;">
-                                <input type="color" id="settingAccentColor" value="#C84B31" style="width: 50px; padding: 0; border: none; height: 40px;">
-                                <input type="text" id="settingAccentColorText" value="#C84B31" style="flex: 1;" onchange="document.getElementById('settingAccentColor').value = this.value; this.value = this.value.toUpperCase();">
+                                <input type="color" id="settingAccentColor" value="#C84B31"
+                                    style="width: 50px; padding: 0; border: none; height: 40px;">
+                                <input type="text" id="settingAccentColorText" value="#C84B31" style="flex: 1;"
+                                    onchange="document.getElementById('settingAccentColor').value = this.value; this.value = this.value.toUpperCase();">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Arka Plan Rengi</label>
                             <div style="display: flex; gap: 0.5rem; align-items: center;">
-                                <input type="color" id="settingBgColor" value="#f8f9fa" style="width: 50px; padding: 0; border: none; height: 40px;">
-                                <input type="text" id="settingBgColorText" value="#f8f9fa" style="flex: 1;" onchange="document.getElementById('settingBgColor').value = this.value; this.value = this.value.toUpperCase();">
+                                <input type="color" id="settingBgColor" value="#f8f9fa"
+                                    style="width: 50px; padding: 0; border: none; height: 40px;">
+                                <input type="text" id="settingBgColorText" value="#f8f9fa" style="flex: 1;"
+                                    onchange="document.getElementById('settingBgColor').value = this.value; this.value = this.value.toUpperCase();">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Metin Rengi</label>
                             <div style="display: flex; gap: 0.5rem; align-items: center;">
-                                <input type="color" id="settingTextColor" value="#2D2D2D" style="width: 50px; padding: 0; border: none; height: 40px;">
-                                <input type="text" id="settingTextColorText" value="#2D2D2D" style="flex: 1;" onchange="document.getElementById('settingTextColor').value = this.value; this.value = this.value.toUpperCase();">
+                                <input type="color" id="settingTextColor" value="#2D2D2D"
+                                    style="width: 50px; padding: 0; border: none; height: 40px;">
+                                <input type="text" id="settingTextColorText" value="#2D2D2D" style="flex: 1;"
+                                    onchange="document.getElementById('settingTextColor').value = this.value; this.value = this.value.toUpperCase();">
                             </div>
                         </div>
 
-                        <h4 style="margin-top: 1.5rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #333;">Footer (Alt Kısım)</h4>
+                        <h4
+                            style="margin-top: 1.5rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #333;">
+                            Footer (Alt Kısım)</h4>
                         <div class="form-group">
                             <label>Footer Başlık Rengi</label>
                             <div style="display: flex; gap: 0.5rem; align-items: center;">
-                                <input type="color" id="settingFooterHeaderColor" value="#ffffff" style="width: 50px; padding: 0; border: none; height: 40px;">
-                                <input type="text" id="settingFooterHeaderColorText" value="#ffffff" style="flex: 1;" onchange="document.getElementById('settingFooterHeaderColor').value = this.value; this.value = this.value.toUpperCase();">
+                                <input type="color" id="settingFooterHeaderColor" value="#ffffff"
+                                    style="width: 50px; padding: 0; border: none; height: 40px;">
+                                <input type="text" id="settingFooterHeaderColorText" value="#ffffff" style="flex: 1;"
+                                    onchange="document.getElementById('settingFooterHeaderColor').value = this.value; this.value = this.value.toUpperCase();">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Footer Metin Rengi</label>
                             <div style="display: flex; gap: 0.5rem; align-items: center;">
-                                <input type="color" id="settingFooterTextColor" value="#bbbbbb" style="width: 50px; padding: 0; border: none; height: 40px;">
-                                <input type="text" id="settingFooterTextColorText" value="#bbbbbb" style="flex: 1;" onchange="document.getElementById('settingFooterTextColor').value = this.value; this.value = this.value.toUpperCase();">
+                                <input type="color" id="settingFooterTextColor" value="#bbbbbb"
+                                    style="width: 50px; padding: 0; border: none; height: 40px;">
+                                <input type="text" id="settingFooterTextColorText" value="#bbbbbb" style="flex: 1;"
+                                    onchange="document.getElementById('settingFooterTextColor').value = this.value; this.value = this.value.toUpperCase();">
                             </div>
                         </div>
                         <div class="form-group full-width">
@@ -546,11 +578,34 @@
                         </div>
                         <div class="form-group full-width">
                             <label>Çalışma Saatleri</label>
-                            <textarea id="settingFooterHours" rows="2" placeholder="Hafta içi: 10:00 - 22:00..."></textarea>
+                            <textarea id="settingFooterHours" rows="2"
+                                placeholder="Hafta içi: 10:00 - 22:00..."></textarea>
                         </div>
                         <div class="form-group full-width">
                             <label>Copyright Metni</label>
                             <input type="text" id="settingFooterCopyright" placeholder="© 2024 Mickey's Restaurant">
+                        </div>
+
+                        <h4
+                            style="margin-top: 1.5rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #333; grid-column: 1 / -1;">
+                            Buton & Sosyal Medya
+                        </h4>
+                        <div class="form-group">
+                            <label>Get in Touch Buton Metni</label>
+                            <input type="text" id="settingGetInTouchText" placeholder="İLETİŞİM" value="İLETİŞİM">
+                        </div>
+                        <div class="form-group">
+                            <label>Get in Touch Buton Linki</label>
+                            <input type="text" id="settingGetInTouchLink" placeholder="https://wa.me/905551234567"
+                                value="#contact">
+                        </div>
+                        <div class="form-group">
+                            <label>Instagram Linki</label>
+                            <input type="text" id="settingInstagramLink" placeholder="https://instagram.com/yourpage">
+                        </div>
+                        <div class="form-group">
+                            <label>Facebook Linki</label>
+                            <input type="text" id="settingFacebookLink" placeholder="https://facebook.com/yourpage">
                         </div>
                     </div>
                 </div>
@@ -646,7 +701,8 @@
                         <label>Görsel URL</label>
                         <div style="display: flex; gap: 0.5rem;">
                             <input type="text" id="productImage" placeholder="https://..." style="flex: 1;">
-                            <button type="button" class="btn-secondary" onclick="openMediaUploader('productImage')">Seç</button>
+                            <button type="button" class="btn-secondary"
+                                onclick="openMediaUploader('productImage')">Seç</button>
                         </div>
                     </div>
 
@@ -657,11 +713,14 @@
 
                     <div class="form-group full-width">
                         <label>Varyasyonlar (Opsiyonel)</label>
-                        <p style="font-size: 0.8rem; color: #666; margin-bottom: 0.5rem;">Farklı porsiyon/boyut seçenekleri için kullanın (örn: 33cl, 50cl, Kadeh, Şişe vb).</p>
-                        <div id="productVariantsContainer" style="margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <p style="font-size: 0.8rem; color: #666; margin-bottom: 0.5rem;">Farklı porsiyon/boyut
+                            seçenekleri için kullanın (örn: 33cl, 50cl, Kadeh, Şişe vb).</p>
+                        <div id="productVariantsContainer"
+                            style="margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
                             <!-- Variant rows will go here -->
                         </div>
-                        <button type="button" class="btn-secondary btn-sm" onclick="addVariantRow()">+ Varyasyon Ekle</button>
+                        <button type="button" class="btn-secondary btn-sm" onclick="addVariantRow()">+ Varyasyon
+                            Ekle</button>
                     </div>
 
                     <div class="form-group full-width">
@@ -761,7 +820,8 @@
                     <label>Arka Plan Görseli URL</label>
                     <div style="display: flex; gap: 0.5rem;">
                         <input type="text" id="categoryBgImage" placeholder="https://..." style="flex: 1;">
-                        <button type="button" class="btn-secondary" onclick="openMediaUploader('categoryBgImage')">Seç</button>
+                        <button type="button" class="btn-secondary"
+                            onclick="openMediaUploader('categoryBgImage')">Seç</button>
                     </div>
                 </div>
 
@@ -771,7 +831,8 @@
                         <option value="modal">Standart (Detayda Seçim)</option>
                         <option value="list">Liste (Kadeh/Şişe vb. yan yana)</option>
                     </select>
-                    <small style="color: var(--text-muted); font-size: 0.85rem;">Şarap veya Bira menüsü için 'Liste' önerilir.</small>
+                    <small style="color: var(--text-muted); font-size: 0.85rem;">Şarap veya Bira menüsü için 'Liste'
+                        önerilir.</small>
                 </div>
 
                 <div class="modal-footer">
@@ -821,7 +882,8 @@
                     <label>Görsel URL</label>
                     <div style="display: flex; gap: 0.5rem;">
                         <input type="text" id="bannerImage" placeholder="https://..." style="flex: 1;">
-                        <button type="button" class="btn-secondary" onclick="openMediaUploader('bannerImage')">Seç</button>
+                        <button type="button" class="btn-secondary"
+                            onclick="openMediaUploader('bannerImage')">Seç</button>
                     </div>
                 </div>
 
@@ -840,54 +902,56 @@
         </div>
     </div>
 </div>
-    <!-- Bulk Allergen Modal -->
-    <div class="modal" id="bulkAllergenModal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeBulkAllergenModal()">&times;</span>
-            <h2 class="modal-title">Toplu Etiket/Alerjen Atama</h2>
-            <p>Seçilen ürünlere eklenecek veya çıkarılacak etiketleri belirleyin.</p>
-            
-            <div class="form-group">
-                <label>Etiketler</label>
-                <div class="tags-container">
-                    <label class="tag-checkbox">
-                        <input type="checkbox" id="bulkTagSpicy">
-                        <span>Acılı (Ekle)</span>
-                    </label>
-                    <label class="tag-checkbox">
-                        <input type="checkbox" id="bulkTagVegetarian">
-                        <span>Vejetaryen (Ekle)</span>
-                    </label>
-                </div>
-                <!-- Future: Custom Allergens -->
-                <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">Şu an sadece ekleme işlemi yapar. Mevcut etiketleri korur.</p>
-            </div>
+<!-- Bulk Allergen Modal -->
+<div class="modal" id="bulkAllergenModal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeBulkAllergenModal()">&times;</span>
+        <h2 class="modal-title">Toplu Etiket/Alerjen Atama</h2>
+        <p>Seçilen ürünlere eklenecek veya çıkarılacak etiketleri belirleyin.</p>
 
-            <div class="modal-actions">
-                <button class="btn-secondary" onclick="closeBulkAllergenModal()">İptal</button>
-                <button class="btn-primary" onclick="saveBulkAllergens()">Kaydet</button>
+        <div class="form-group">
+            <label>Etiketler</label>
+            <div class="tags-container">
+                <label class="tag-checkbox">
+                    <input type="checkbox" id="bulkTagSpicy">
+                    <span>Acılı (Ekle)</span>
+                </label>
+                <label class="tag-checkbox">
+                    <input type="checkbox" id="bulkTagVegetarian">
+                    <span>Vejetaryen (Ekle)</span>
+                </label>
             </div>
+            <!-- Future: Custom Allergens -->
+            <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">Şu an sadece ekleme işlemi yapar. Mevcut
+                etiketleri korur.</p>
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn-secondary" onclick="closeBulkAllergenModal()">İptal</button>
+            <button class="btn-primary" onclick="saveBulkAllergens()">Kaydet</button>
         </div>
     </div>
-    </div>
+</div>
+</div>
 
-    <!-- Bulk Category Modal -->
-    <div class="modal" id="bulkCategoryModal">
-        <div class="modal-content" style="max-width: 400px;">
-            <span class="close-modal" onclick="closeBulkCategoryModal()">&times;</span>
-            <h2 class="modal-title">Toplu Kategori Değiştir</h2>
-            <p>Seçilen ürünlerin kategorisini güncelleyin.</p>
-            
-            <div class="form-group">
-                <label>Yeni Kategori</label>
-                <select id="bulkCategorySelect" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
-                    <option value="">Kategori Seçin...</option>
-                </select>
-            </div>
-            
-            <div class="modal-footer" style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 0.5rem;">
-                <button class="btn-secondary" onclick="closeBulkCategoryModal()">İptal</button>
-                <button class="btn-primary" onclick="applyBulkCategory()">Kaydet</button>
-            </div>
+<!-- Bulk Category Modal -->
+<div class="modal" id="bulkCategoryModal">
+    <div class="modal-content" style="max-width: 400px;">
+        <span class="close-modal" onclick="closeBulkCategoryModal()">&times;</span>
+        <h2 class="modal-title">Toplu Kategori Değiştir</h2>
+        <p>Seçilen ürünlerin kategorisini güncelleyin.</p>
+
+        <div class="form-group">
+            <label>Yeni Kategori</label>
+            <select id="bulkCategorySelect"
+                style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                <option value="">Kategori Seçin...</option>
+            </select>
+        </div>
+
+        <div class="modal-footer" style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 0.5rem;">
+            <button class="btn-secondary" onclick="closeBulkCategoryModal()">İptal</button>
+            <button class="btn-primary" onclick="applyBulkCategory()">Kaydet</button>
         </div>
     </div>
+</div>
