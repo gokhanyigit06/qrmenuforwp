@@ -283,24 +283,24 @@ body {
     justify-content: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-md) 0;
-    background: rgba(0, 0, 0, 0.05);
+    background: #4a4a4a;
 }
 
 .dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.4);
     cursor: pointer;
     transition: all var(--transition-normal);
 }
 
 .dot:hover {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .dot.active {
-    background: var(--primary-color, #C84B31);
+    background: #ffffff;
     transform: scale(1.2);
 }
 
