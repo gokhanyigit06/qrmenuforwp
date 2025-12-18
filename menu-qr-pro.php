@@ -258,8 +258,12 @@ class MickeysQRMenu
                 echo '--category-padding: ' . esc_attr($catPadding) . ';';
 
                 // Category Header Height
-                $catHeaderHeight = isset($settings['categoryHeaderHeight']) ? intval($settings['categoryHeaderHeight']) : 80;
+                $catHeaderHeight = isset($settings['categoryHeaderHeight']) ? intval($settings['categoryHeaderHeight']) : 70;
                 echo '--category-header-height: ' . esc_attr($catHeaderHeight) . 'px;';
+
+                // Category Background Size
+                $catBgSize = isset($settings['categoryBgSize']) ? $settings['categoryBgSize'] : '100% 100%';
+                echo '--category-bg-size: ' . esc_attr($catBgSize) . ';';
 
                 echo '}';
 

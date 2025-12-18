@@ -680,10 +680,20 @@
                         </div>
                         <div class="form-group">
                             <label>Kategori Başlık Yüksekliği (px)</label>
-                            <input type="number" id="settingCategoryHeaderHeight" placeholder="80" value="80" min="50"
+                            <input type="number" id="settingCategoryHeaderHeight" placeholder="70" value="70" min="50"
                                 max="300">
-                            <p style="font-size: 0.8rem; color: #888; margin-top: 0.25rem;">📐 Görsel daha fazla
-                                görünsün istiyorsanız yüksekliği artırın (örn: 120-150)</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Arkaplan Görsel Boyutlandırma</label>
+                            <select id="settingCategoryBgSize">
+                                <option value="100% 100%">Tam Sığdır (1290x70 için önerilir)</option>
+                                <option value="cover">Cover (Kırparak kapla)</option>
+                                <option value="contain">Contain (Tam göster)</option>
+                                <option value="100% auto">Genişliğe Sığdır</option>
+                                <option value="auto 100%">Yüksekliğe Sığdır</option>
+                            </select>
+                            <p style="font-size: 0.8rem; color: #888; margin-top: 0.25rem;">📐 Elementor tarzı görseller
+                                (1290x70) için "Tam Sığdır" seçin</p>
                         </div>
                     </div>
                     <div class="form-group">

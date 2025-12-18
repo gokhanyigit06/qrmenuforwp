@@ -323,13 +323,13 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: var(--spacing-md) var(--spacing-lg);
-    background-size: cover;
+    background-size: var(--category-bg-size, 100% 100%);
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #6b6b5a;
     cursor: pointer;
     position: relative;
-    min-height: var(--category-header-height, 80px);
+    min-height: var(--category-header-height, 70px);
     transition: all var(--transition-normal);
 }
 
