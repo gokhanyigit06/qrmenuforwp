@@ -14,7 +14,7 @@ $getInTouchLink = isset($theme_settings['getInTouchLink']) ? $theme_settings['ge
 $instagramLink = isset($theme_settings['instagramLink']) ? $theme_settings['instagramLink'] : '#';
 $facebookLink = isset($theme_settings['facebookLink']) ? $theme_settings['facebookLink'] : '#';
 ?>
-<div class="mickeys-menu-wrapper <?php echo $layout === 'embed' ? 'embed-mode' : ''; ?>">
+<div class="mqrp-menu-wrapper <?php echo $layout === 'embed' ? 'embed-mode' : ''; ?>">
     <?php if ($layout === 'full'): ?>
         <!-- Header -->
         <header class="header">
@@ -61,7 +61,13 @@ $facebookLink = isset($theme_settings['facebookLink']) ? $theme_settings['facebo
     <?php endif; ?>
 
     <!-- Menu Accordion -->
-    <main class="menu-accordion" id="menuAccordion">
+    <?php
+    $viewMode = 'grid';
+    if ($themeSettings && isset($themeSettings['viewMode'])) {
+        $viewMode = $themeSettings['viewMode'];
+    }
+    ?>
+    <main class="menu-accordion" id="menuAccordion" data-view="<?php echo esc_attr($viewMode); ?>">
         <!-- Categories will be dynamically inserted here -->
     </main>
 
@@ -109,49 +115,51 @@ $facebookLink = isset($theme_settings['facebookLink']) ? $theme_settings['facebo
     <!-- Footer -->
     <?php if ($layout === 'full'): ?>
         <footer class="footer">
-        <footer class="footer">
-            <div class="container" style="display: flex; flex-direction: column; align-items: center;">
-                <div class="footer-grid">
-                    <div class="footer-col">
-                        <h3 data-lang-tr="İletişim" data-lang-en="Contact">İletişim</h3>
-                        <p><?php echo isset($theme_settings['footerContact']) && !empty($theme_settings['footerContact']) ? nl2br(esc_html($theme_settings['footerContact'])) : '+90 555 123 45 67<br>Minerva Han, Karakoy'; ?>
+            <footer class="footer">
+                <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="footer-grid">
+                        <div class="footer-col">
+                            <h3 data-lang-tr="İletişim" data-lang-en="Contact">İletişim</h3>
+                            <p><?php echo isset($theme_settings['footerContact']) && !empty($theme_settings['footerContact']) ? nl2br(esc_html($theme_settings['footerContact'])) : '+90 555 123 45 67<br>Minerva Han, Karakoy'; ?>
+                            </p>
+                        </div>
+                        <div class="footer-col">
+                            <h3 data-lang-tr="Çalışma Saatleri" data-lang-en="Hours">Çalışma Saatleri</h3>
+                            <p><?php echo isset($theme_settings['footerHours']) && !empty($theme_settings['footerHours']) ? nl2br(esc_html($theme_settings['footerHours'])) : 'Pzt - Paz: 10:00 - 02:00'; ?>
+                            </p>
+                        </div>
+                        <div class="footer-col">
+                            <h3 data-lang-tr="Bize Ulaşın" data-lang-en="Get in Touch">Bize Ulaşın</h3>
+                            <div class="social-links">
+                                <a href="<?php echo esc_url($instagramLink); ?>" class="social-link" target="_blank"
+                                    rel="noopener" aria-label="Instagram">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                </a>
+                                <a href="<?php echo esc_url($facebookLink); ?>" class="social-link" target="_blank"
+                                    rel="noopener" aria-label="Facebook">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <!-- Language Switcher Footer -->
+                            <div class="lang-switcher">
+                                <button onclick="toggleLanguage('tr')" class="lang-btn" title="Türkçe">🇹🇷</button>
+                                <button onclick="toggleLanguage('en')" class="lang-btn" title="English">🇬🇧</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p><?php echo isset($theme_settings['footerCopyright']) && !empty($theme_settings['footerCopyright']) ? esc_html($theme_settings['footerCopyright']) : '&copy; 2024 Mickey\'s Restaurant'; ?>
                         </p>
                     </div>
-                    <div class="footer-col">
-                        <h3 data-lang-tr="Çalışma Saatleri" data-lang-en="Hours">Çalışma Saatleri</h3>
-                        <p><?php echo isset($theme_settings['footerHours']) && !empty($theme_settings['footerHours']) ? nl2br(esc_html($theme_settings['footerHours'])) : 'Pzt - Paz: 10:00 - 02:00'; ?>
-                        </p>
-                    </div>
-                    <div class="footer-col">
-                        <h3 data-lang-tr="Bize Ulaşın" data-lang-en="Get in Touch">Bize Ulaşın</h3>
-                        <div class="social-links">
-                            <a href="<?php echo esc_url($instagramLink); ?>" class="social-link" target="_blank"
-                                rel="noopener" aria-label="Instagram">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg>
-                            </a>
-                            <a href="<?php echo esc_url($facebookLink); ?>" class="social-link" target="_blank"
-                                rel="noopener" aria-label="Facebook">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                                </svg>
-                            </a>
-                        </div>
-                        <!-- Language Switcher Footer -->
-                        <div class="lang-switcher">
-                            <button onclick="toggleLanguage('tr')" class="lang-btn" title="Türkçe">🇹🇷</button>
-                            <button onclick="toggleLanguage('en')" class="lang-btn" title="English">🇬🇧</button>
-                        </div>
-                    </div>
                 </div>
-                <div class="footer-bottom">
-                    <p><?php echo isset($theme_settings['footerCopyright']) && !empty($theme_settings['footerCopyright']) ? esc_html($theme_settings['footerCopyright']) : '&copy; 2024 Mickey\'s Restaurant'; ?>
-                    </p>
-                </div>
-            </div>
-        </footer>
-    <?php endif; ?>
+            </footer>
+        <?php endif; ?>
 </div>

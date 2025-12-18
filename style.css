@@ -75,17 +75,17 @@ body {
 }
 
 /* Force fonts to override theme */
-.mickeys-menu-wrapper,
-.mickeys-menu-wrapper * {
+.mqrp-menu-wrapper,
+.mqrp-menu-wrapper * {
     font-family: var(--font-primary);
 }
 
-.mickeys-menu-wrapper h1,
-.mickeys-menu-wrapper h2,
-.mickeys-menu-wrapper h3,
-.mickeys-menu-wrapper .logo,
-.mickeys-menu-wrapper .banner-title,
-.mickeys-menu-wrapper .category-name {
+.mqrp-menu-wrapper h1,
+.mqrp-menu-wrapper h2,
+.mqrp-menu-wrapper h3,
+.mqrp-menu-wrapper .logo,
+.mqrp-menu-wrapper .banner-title,
+.mqrp-menu-wrapper .category-name {
     font-family: var(--font-display);
 }
 
@@ -933,4 +933,160 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--secondary-color);
+}
+
+/* ==================== View Modes ==================== */
+
+/* List Mode */
+.menu-accordion[data-view="list"] .category-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.menu-accordion[data-view="list"] .menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.menu-accordion[data-view="list"] .menu-item-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: var(--border-radius);
+}
+
+.menu-accordion[data-view="list"] .menu-item-content {
+    flex: 1;
+    padding: var(--spacing-sm);
+}
+
+.menu-accordion[data-view="list"] .menu-item:hover {
+    transform: none;
+}
+
+/* Gallery Mode */
+.menu-accordion[data-view="gallery"] .category-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.menu-accordion[data-view="gallery"] .menu-item {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.menu-accordion[data-view="gallery"] .menu-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-accordion[data-view="gallery"] .menu-item-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: var(--spacing-lg);
+}
+
+.menu-accordion[data-view="gallery"] .menu-item-name,
+.menu-accordion[data-view="gallery"] .menu-item-price {
+    color: white;
+}
+
+/* Magazine Mode */
+.menu-accordion[data-view="magazine"] .category-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+}
+
+.menu-accordion[data-view="magazine"] .menu-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.menu-accordion[data-view="magazine"] .menu-item:first-child .menu-item-image {
+    height: 100%;
+}
+
+/* Carousel Mode */
+.menu-accordion[data-view="carousel"] .category-items {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.menu-accordion[data-view="carousel"] .menu-item {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+}
+
+.menu-accordion[data-view="carousel"] .category-items::-webkit-scrollbar {
+    height: 6px;
+}
+
+/* Masonry Mode */
+.menu-accordion[data-view="masonry"] .category-items {
+    column-count: 3;
+    column-gap: var(--spacing-md);
+}
+
+.menu-accordion[data-view="masonry"] .menu-item {
+    break-inside: avoid;
+    margin-bottom: var(--spacing-md);
+}
+
+.menu-accordion[data-view="masonry"] .menu-item-image {
+    height: auto;
+    max-height: 300px;
+}
+
+/* View Mode Responsive */
+@media (max-width: 768px) {
+    .menu-accordion[data-view="magazine"] .category-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-accordion[data-view="masonry"] .category-items {
+        column-count: 2;
+    }
+
+    .menu-accordion[data-view="carousel"] .menu-item {
+        flex: 0 0 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-accordion[data-view="list"] .menu-item {
+        flex-direction: column;
+    }
+
+    .menu-accordion[data-view="list"] .menu-item-image {
+        width: 100%;
+        height: 150px;
+    }
+
+    .menu-accordion[data-view="magazine"] .category-items {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-accordion[data-view="magazine"] .menu-item:first-child {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .menu-accordion[data-view="masonry"] .category-items {
+        column-count: 1;
+    }
 }

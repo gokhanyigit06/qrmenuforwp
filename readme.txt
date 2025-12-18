@@ -1,5 +1,5 @@
-=== Mickey's QR Menu ===
-Contributors: Mickey's
+=== Menu QR Pro ===
+Contributors: Luiff Dev
 Tags: menu, qr, restaurant
 Requires at least: 5.0
 Tested up to: 6.4

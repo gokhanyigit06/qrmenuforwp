@@ -428,6 +428,58 @@
                 <div class="excel-card"
                     style="text-align: left; max-width: 800px; margin: 0 auto; background: var(--bg-secondary);">
                     <h3>Tema Ayarları</h3>
+
+                    <h4
+                        style="margin-top: 1rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #333;">
+                        🎨 Hazır Tema Seç
+                    </h4>
+                    <div class="form-group">
+                        <label>Tema Şablonu</label>
+                        <select id="settingThemePreset" onchange="applyThemePreset(this.value)">
+                            <option value="">-- Özel Ayarlar --</option>
+                            <option value="modern-bistro">Modern Bistro (Siyah + Altın)</option>
+                            <option value="fast-fresh">Fast & Fresh (Turuncu + Yeşil)</option>
+                            <option value="fine-dining">Fine Dining (Bordo + Krem)</option>
+                            <option value="ocean-blue">Ocean Blue (Deniz)</option>
+                            <option value="italiano">Italiano (İtalyan)</option>
+                            <option value="neon-nights">Neon Nights (Bar)</option>
+                            <option value="rustic-wood">Rustic Wood (Geleneksel)</option>
+                            <option value="minimalist">Minimalist (Siyah/Beyaz)</option>
+                            <option value="tokyo-street">Tokyo Street (Japon)</option>
+                            <option value="mexican-fiesta">Mexican Fiesta (Meksika)</option>
+                            <option value="garden-fresh">Garden Fresh (Vejetaryen)</option>
+                            <option value="royal-purple">Royal Purple (VIP)</option>
+                            <option value="sunrise-cafe">Sunrise Cafe (Kahvaltı)</option>
+                            <option value="smoky-bbq">Smoky BBQ (Steakhouse)</option>
+                            <option value="ice-cream-dream">Ice Cream Dream (Tatlıcı)</option>
+                        </select>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                        <div class="form-group">
+                            <label>📐 Görünüm Modu</label>
+                            <select id="settingViewMode">
+                                <option value="grid">⊞ Kart Grid</option>
+                                <option value="list">☰ Liste Kompakt</option>
+                                <option value="gallery">⊠ Galeri</option>
+                                <option value="magazine">◫ Magazine</option>
+                                <option value="carousel">⟷ Carousel</option>
+                                <option value="masonry">▦ Masonry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>🌙 Karanlık Mod</label>
+                            <select id="settingDarkMode">
+                                <option value="light">Sadece Aydınlık</option>
+                                <option value="dark">Sadece Karanlık</option>
+                                <option value="auto">Otomatik (Cihaza Göre)</option>
+                                <option value="user">Müşteri Seçimli</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid #ddd;">
+
                     <p>Menü görünümünü özelleştirin. Fontlar ve renkler tüm menüde geçerli olacaktır.</p>
 
                     <div class="form-grid">
@@ -583,7 +635,7 @@
                         </div>
                         <div class="form-group full-width">
                             <label>Copyright Metni</label>
-                            <input type="text" id="settingFooterCopyright" placeholder="© 2024 Mickey's Restaurant">
+                            <input type="text" id="settingFooterCopyright" placeholder="© 2024 Restaurant Restaurant">
                         </div>
 
                         <h4

@@ -1,4 +1,4 @@
-# Mickey's QR Menu Project (V6)
+# Menu QR Pro Project (V6)
 
 ## Project Status
 Current Version: 1.6.0

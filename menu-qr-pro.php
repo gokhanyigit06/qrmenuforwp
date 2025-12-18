@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Mickey's QR Menu
+ * Plugin Name: Menu QR Pro
  * Description: A dynamic QR Menu & Admin Panel plugin.
- * Version: 1.7.0
- * Author: Mickey's
+ * Version: 2.0.0
+ * Author: Luiff Dev
  * Text Domain: mickeys-qr-menu
  */
 
@@ -191,7 +191,7 @@ class MickeysQRMenu
                 }
 
                 echo '<style id="mickeys-dynamic-styles">';
-                echo '.mickeys-menu-wrapper {';
+                echo '.mqrp-menu-wrapper {';
 
                 // Fonts
                 if (!empty($settings['fontPrimary']))
@@ -261,7 +261,7 @@ class MickeysQRMenu
 
                 // Apply Styles
                 if (!empty($settings['bgColor'])) {
-                    echo '.mickeys-menu-wrapper { background-color: var(--bg-body); }';
+                    echo '.mqrp-menu-wrapper { background-color: var(--bg-body); }';
                     echo 'body { background-color: var(--bg-body); }';
                 }
 
@@ -274,9 +274,9 @@ class MickeysQRMenu
                 // Force Full Width Breakout
                 if (isset($settings['forceFullWidth']) && $settings['forceFullWidth']) {
                     $breakoutCSS = 'width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;';
-                    echo '.mickeys-menu-wrapper { ' . $breakoutCSS . ' }';
+                    echo '.mqrp-menu-wrapper { ' . $breakoutCSS . ' }';
                     // Reset max-width for internal content
-                    echo '.mickeys-menu-wrapper > * { max-width: var(--container-max-width); margin-left: auto; margin-right: auto; }';
+                    echo '.mqrp-menu-wrapper > * { max-width: var(--container-max-width); margin-left: auto; margin-right: auto; }';
                     // Except header, hero-banner and footer which handle their own width
                     echo '.header, .hero-banner, .footer { width: 100vw; max-width: none; }';
                     // Menu accordion needs to respect container
@@ -284,6 +284,19 @@ class MickeysQRMenu
                 }
 
                 echo '.footer-grid { max-width: var(--container-max-width) !important; margin: 0 auto; }';
+
+                // View Mode
+                $viewMode = isset($settings['viewMode']) ? $settings['viewMode'] : 'grid';
+                echo '.mqrp-menu-wrapper { --view-mode: ' . esc_attr($viewMode) . '; }';
+                echo '.menu-accordion[data-view="' . esc_attr($viewMode) . '"] { }';
+
+                // Dark Mode
+                $darkMode = isset($settings['darkMode']) ? $settings['darkMode'] : 'light';
+                if ($darkMode === 'dark') {
+                    echo '.mqrp-menu-wrapper { color-scheme: dark; }';
+                } elseif ($darkMode === 'auto') {
+                    echo '@media (prefers-color-scheme: dark) { .mqrp-menu-wrapper { color-scheme: dark; } }';
+                }
 
                 // Footer
                 echo 'footer h3 { color: var(--footer-header-color) !important; }';

@@ -368,7 +368,7 @@ var menuData = [
         name: "Mac & Cheese",
         nameEn: "Mac & Cheese",
         price: 245,
-        description: "Mickey's'e özel eritilmiş çedar sosu",
+        description: "Restaurant'e özel eritilmiş çedar sosu",
         category: "pasta",
         tags: ["vegetarian"],
         image: "mac-cheese"

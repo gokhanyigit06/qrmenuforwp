@@ -1,0 +1,275 @@
+{
+  "themes": [
+    {
+      "id": "modern-bistro",
+      "name": "Modern Bistro",
+      "colors": {
+        "primary": "#1a1a1a",
+        "secondary": "#d4af37",
+        "background": "#0d0d0d",
+        "card": "#1f1f1f",
+        "text": "#ffffff",
+        "accent": "#d4af37"
+      },
+      "fonts": {
+        "primary": "Inter",
+        "display": "Inter"
+      },
+      "borderRadius": "12"
+    },
+    {
+      "id": "fast-fresh",
+      "name": "Fast & Fresh",
+      "colors": {
+        "primary": "#ff6b35",
+        "secondary": "#2ec4b6",
+        "background": "#ffffff",
+        "card": "#f8f9fa",
+        "text": "#1a1a2e",
+        "accent": "#ff6b35"
+      },
+      "fonts": {
+        "primary": "Poppins",
+        "display": "Poppins"
+      },
+      "borderRadius": "16"
+    },
+    {
+      "id": "fine-dining",
+      "name": "Fine Dining",
+      "colors": {
+        "primary": "#722f37",
+        "secondary": "#f5f0e1",
+        "background": "#1a1a1a",
+        "card": "#2d2d2d",
+        "text": "#f5f0e1",
+        "accent": "#c9a959"
+      },
+      "fonts": {
+        "primary": "Lora",
+        "display": "Playfair Display"
+      },
+      "borderRadius": "4"
+    },
+    {
+      "id": "ocean-blue",
+      "name": "Ocean Blue",
+      "colors": {
+        "primary": "#0077b6",
+        "secondary": "#90e0ef",
+        "background": "#caf0f8",
+        "card": "#ffffff",
+        "text": "#03045e",
+        "accent": "#00b4d8"
+      },
+      "fonts": {
+        "primary": "Montserrat",
+        "display": "Montserrat"
+      },
+      "borderRadius": "12"
+    },
+    {
+      "id": "italiano",
+      "name": "Italiano",
+      "colors": {
+        "primary": "#c41e3a",
+        "secondary": "#008c45",
+        "background": "#fffdf7",
+        "card": "#ffffff",
+        "text": "#2d2d2d",
+        "accent": "#c41e3a"
+      },
+      "fonts": {
+        "primary": "Lora",
+        "display": "Abril Fatface"
+      },
+      "borderRadius": "8"
+    },
+    {
+      "id": "neon-nights",
+      "name": "Neon Nights",
+      "colors": {
+        "primary": "#ff00ff",
+        "secondary": "#00ffff",
+        "background": "#0a0a0a",
+        "card": "#1a1a2e",
+        "text": "#ffffff",
+        "accent": "#ff006e"
+      },
+      "fonts": {
+        "primary": "Orbitron",
+        "display": "Orbitron"
+      },
+      "borderRadius": "0"
+    },
+    {
+      "id": "rustic-wood",
+      "name": "Rustic Wood",
+      "colors": {
+        "primary": "#8b4513",
+        "secondary": "#deb887",
+        "background": "#f5f5dc",
+        "card": "#fff8dc",
+        "text": "#3e2723",
+        "accent": "#a0522d"
+      },
+      "fonts": {
+        "primary": "Merriweather",
+        "display": "Merriweather"
+      },
+      "borderRadius": "6"
+    },
+    {
+      "id": "minimalist",
+      "name": "Minimalist",
+      "colors": {
+        "primary": "#000000",
+        "secondary": "#ffffff",
+        "background": "#ffffff",
+        "card": "#f5f5f5",
+        "text": "#1a1a1a",
+        "accent": "#000000"
+      },
+      "fonts": {
+        "primary": "system-ui",
+        "display": "system-ui"
+      },
+      "borderRadius": "8"
+    },
+    {
+      "id": "tokyo-street",
+      "name": "Tokyo Street",
+      "colors": {
+        "primary": "#dc143c",
+        "secondary": "#1a1a1a",
+        "background": "#0d0d0d",
+        "card": "#1a1a1a",
+        "text": "#ffffff",
+        "accent": "#ff4757"
+      },
+      "fonts": {
+        "primary": "Noto Sans",
+        "display": "Noto Sans"
+      },
+      "borderRadius": "4"
+    },
+    {
+      "id": "mexican-fiesta",
+      "name": "Mexican Fiesta",
+      "colors": {
+        "primary": "#e63946",
+        "secondary": "#2ec4b6",
+        "background": "#fff7e6",
+        "card": "#ffffff",
+        "text": "#1d3557",
+        "accent": "#ffbe0b"
+      },
+      "fonts": {
+        "primary": "Fredoka",
+        "display": "Fredoka"
+      },
+      "borderRadius": "16"
+    },
+    {
+      "id": "garden-fresh",
+      "name": "Garden Fresh",
+      "colors": {
+        "primary": "#2d5a27",
+        "secondary": "#8bc34a",
+        "background": "#f1f8e9",
+        "card": "#ffffff",
+        "text": "#1b5e20",
+        "accent": "#4caf50"
+      },
+      "fonts": {
+        "primary": "Quicksand",
+        "display": "Quicksand"
+      },
+      "borderRadius": "20"
+    },
+    {
+      "id": "royal-purple",
+      "name": "Royal Purple",
+      "colors": {
+        "primary": "#4a0080",
+        "secondary": "#d4af37",
+        "background": "#1a0033",
+        "card": "#2d0052",
+        "text": "#f8f8f8",
+        "accent": "#gold"
+      },
+      "fonts": {
+        "primary": "Cormorant Garamond",
+        "display": "Cormorant Garamond"
+      },
+      "borderRadius": "8"
+    },
+    {
+      "id": "sunrise-cafe",
+      "name": "Sunrise Cafe",
+      "colors": {
+        "primary": "#ff9a8b",
+        "secondary": "#ffecd2",
+        "background": "#fff5f5",
+        "card": "#ffffff",
+        "text": "#5d4e37",
+        "accent": "#ff6b6b"
+      },
+      "fonts": {
+        "primary": "Nunito",
+        "display": "Nunito"
+      },
+      "borderRadius": "24"
+    },
+    {
+      "id": "smoky-bbq",
+      "name": "Smoky BBQ",
+      "colors": {
+        "primary": "#8b0000",
+        "secondary": "#ff4500",
+        "background": "#1a1a1a",
+        "card": "#2d2d2d",
+        "text": "#f5f5f5",
+        "accent": "#ff6347"
+      },
+      "fonts": {
+        "primary": "Oswald",
+        "display": "Oswald"
+      },
+      "borderRadius": "4"
+    },
+    {
+      "id": "ice-cream-dream",
+      "name": "Ice Cream Dream",
+      "colors": {
+        "primary": "#ff9ff3",
+        "secondary": "#54a0ff",
+        "background": "#ffeaa7",
+        "card": "#ffffff",
+        "text": "#2d3436",
+        "accent": "#fd79a8"
+      },
+      "fonts": {
+        "primary": "Pacifico",
+        "display": "Pacifico"
+      },
+      "borderRadius": "30"
+    }
+  ],
+  "viewModes": [
+    {"id": "grid", "name": "Kart Grid", "icon": "⊞"},
+    {"id": "list", "name": "Liste Kompakt", "icon": "☰"},
+    {"id": "gallery", "name": "Galeri", "icon": "⊠"},
+    {"id": "magazine", "name": "Magazine", "icon": "◫"},
+    {"id": "carousel", "name": "Carousel", "icon": "⟷"},
+    {"id": "masonry", "name": "Masonry", "icon": "▦"}
+  ],
+  "colorPalettes": [
+    {"id": "warm", "name": "Sıcak", "colors": ["#ff6b35", "#f7931e", "#ffd23f"]},
+    {"id": "cool", "name": "Soğuk", "colors": ["#0077b6", "#00b4d8", "#90e0ef"]},
+    {"id": "earth", "name": "Toprak", "colors": ["#8b4513", "#deb887", "#556b2f"]},
+    {"id": "pastel", "name": "Pastel", "colors": ["#ffb5a7", "#fcd5ce", "#f8edeb"]},
+    {"id": "neon", "name": "Neon", "colors": ["#ff00ff", "#00ffff", "#39ff14"]},
+    {"id": "mono", "name": "Monokrom", "colors": ["#1a1a1a", "#666666", "#e0e0e0"]}
+  ]
+}

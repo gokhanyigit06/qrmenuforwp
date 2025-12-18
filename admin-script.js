@@ -1109,8 +1109,45 @@ function toggleCustomWidth() {
         group.style.display = layout === 'custom' ? 'block' : 'none';
     }
 }
+// Theme Presets
+var themePresets = {
+    'modern-bistro': { primary: '#1a1a1a', secondary: '#d4af37', bg: '#0d0d0d', card: '#1f1f1f', text: '#ffffff', fontPrimary: 'Inter', fontDisplay: 'Inter', borderRadius: '12' },
+    'fast-fresh': { primary: '#ff6b35', secondary: '#2ec4b6', bg: '#ffffff', card: '#f8f9fa', text: '#1a1a2e', fontPrimary: 'Poppins', fontDisplay: 'Poppins', borderRadius: '16' },
+    'fine-dining': { primary: '#722f37', secondary: '#f5f0e1', bg: '#1a1a1a', card: '#2d2d2d', text: '#f5f0e1', fontPrimary: 'Lora', fontDisplay: 'Playfair Display', borderRadius: '4' },
+    'ocean-blue': { primary: '#0077b6', secondary: '#90e0ef', bg: '#caf0f8', card: '#ffffff', text: '#03045e', fontPrimary: 'Montserrat', fontDisplay: 'Montserrat', borderRadius: '12' },
+    'italiano': { primary: '#c41e3a', secondary: '#008c45', bg: '#fffdf7', card: '#ffffff', text: '#2d2d2d', fontPrimary: 'Lora', fontDisplay: 'Lora', borderRadius: '8' },
+    'neon-nights': { primary: '#ff00ff', secondary: '#00ffff', bg: '#0a0a0a', card: '#1a1a2e', text: '#ffffff', fontPrimary: 'Outfit', fontDisplay: 'Outfit', borderRadius: '0' },
+    'rustic-wood': { primary: '#8b4513', secondary: '#deb887', bg: '#f5f5dc', card: '#fff8dc', text: '#3e2723', fontPrimary: 'Merriweather', fontDisplay: 'Merriweather', borderRadius: '6' },
+    'minimalist': { primary: '#000000', secondary: '#ffffff', bg: '#ffffff', card: '#f5f5f5', text: '#1a1a1a', fontPrimary: 'Inter', fontDisplay: 'Inter', borderRadius: '8' },
+    'tokyo-street': { primary: '#dc143c', secondary: '#1a1a1a', bg: '#0d0d0d', card: '#1a1a1a', text: '#ffffff', fontPrimary: 'Outfit', fontDisplay: 'Outfit', borderRadius: '4' },
+    'mexican-fiesta': { primary: '#e63946', secondary: '#2ec4b6', bg: '#fff7e6', card: '#ffffff', text: '#1d3557', fontPrimary: 'Poppins', fontDisplay: 'Poppins', borderRadius: '16' },
+    'garden-fresh': { primary: '#2d5a27', secondary: '#8bc34a', bg: '#f1f8e9', card: '#ffffff', text: '#1b5e20', fontPrimary: 'Outfit', fontDisplay: 'Outfit', borderRadius: '20' },
+    'royal-purple': { primary: '#4a0080', secondary: '#d4af37', bg: '#1a0033', card: '#2d0052', text: '#f8f8f8', fontPrimary: 'Lora', fontDisplay: 'Playfair Display', borderRadius: '8' },
+    'sunrise-cafe': { primary: '#ff9a8b', secondary: '#ffecd2', bg: '#fff5f5', card: '#ffffff', text: '#5d4e37', fontPrimary: 'Poppins', fontDisplay: 'Poppins', borderRadius: '24' },
+    'smoky-bbq': { primary: '#8b0000', secondary: '#ff4500', bg: '#1a1a1a', card: '#2d2d2d', text: '#f5f5f5', fontPrimary: 'Outfit', fontDisplay: 'Oswald', borderRadius: '4' },
+    'ice-cream-dream': { primary: '#ff9ff3', secondary: '#54a0ff', bg: '#ffeaa7', card: '#ffffff', text: '#2d3436', fontPrimary: 'Poppins', fontDisplay: 'Poppins', borderRadius: '30' }
+};
+
+function applyThemePreset(presetId) {
+    if (!presetId || !themePresets[presetId]) return;
+    var preset = themePresets[presetId];
+    document.getElementById('settingPrimaryColor').value = preset.primary;
+    document.getElementById('settingPrimaryColorText').value = preset.primary;
+    document.getElementById('settingBgColor').value = preset.bg;
+    document.getElementById('settingBgColorText').value = preset.bg;
+    document.getElementById('settingTextColor').value = preset.text;
+    document.getElementById('settingTextColorText').value = preset.text;
+    document.getElementById('settingFontPrimary').value = preset.fontPrimary;
+    document.getElementById('settingFontDisplay').value = preset.fontDisplay;
+    document.getElementById('settingBorderRadius').value = preset.borderRadius;
+    showNotification('Tema uygulandı: ' + presetId, 'success');
+}
+
 function saveThemeSettings() {
     const settings = {
+        themePreset: document.getElementById('settingThemePreset')?.value || '',
+        viewMode: document.getElementById('settingViewMode')?.value || 'grid',
+        darkMode: document.getElementById('settingDarkMode')?.value || 'light',
         logoType: document.getElementById('settingLogoType').value,
         logoText: document.getElementById('settingLogoText').value,
         logoImage: document.getElementById('settingLogoImage').value,
@@ -1188,6 +1225,9 @@ function loadThemeSettings() {
     if (adminThemeSettings.categorySpacing) document.getElementById('settingCategorySpacing').value = adminThemeSettings.categorySpacing;
     if (adminThemeSettings.categoryPadding) document.getElementById('settingCategoryPadding').value = adminThemeSettings.categoryPadding;
     if (adminThemeSettings.forceFullWidth !== undefined) document.getElementById('settingForceFullWidth').checked = adminThemeSettings.forceFullWidth;
+    if (adminThemeSettings.themePreset) document.getElementById('settingThemePreset').value = adminThemeSettings.themePreset;
+    if (adminThemeSettings.viewMode) document.getElementById('settingViewMode').value = adminThemeSettings.viewMode;
+    if (adminThemeSettings.darkMode) document.getElementById('settingDarkMode').value = adminThemeSettings.darkMode;
 
     const setCol = (id, val) => {
         if (val) {
