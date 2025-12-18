@@ -441,5 +441,37 @@ document.addEventListener('DOMContentLoaded', function () {
     var slides = document.querySelectorAll('.banner-slide');
     if (slides.length > 1) {
         bannerInterval = setInterval(nextSlide, 5000);
+
+        // Touch swipe support for mobile
+        var bannerSlider = document.querySelector('.banner-slider');
+        if (bannerSlider) {
+            var touchStartX = 0;
+            var touchEndX = 0;
+
+            bannerSlider.addEventListener('touchstart', function (e) {
+                touchStartX = e.changedTouches[0].screenX;
+                // Pause auto-rotation on touch
+                if (bannerInterval) clearInterval(bannerInterval);
+            }, { passive: true });
+
+            bannerSlider.addEventListener('touchend', function (e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                // Resume auto-rotation after swipe
+                bannerInterval = setInterval(nextSlide, 5000);
+            }, { passive: true });
+
+            function handleSwipe() {
+                var swipeThreshold = 50;
+                var diff = touchStartX - touchEndX;
+                if (diff > swipeThreshold) {
+                    // Swiped left - next slide
+                    goToSlide(currentSlide + 1);
+                } else if (diff < -swipeThreshold) {
+                    // Swiped right - prev slide
+                    goToSlide(currentSlide - 1);
+                }
+            }
+        }
     }
 });
