@@ -964,6 +964,8 @@
                         <button type="button" class="btn-secondary"
                             onclick="openMediaUploader('bannerImage')">Seç</button>
                     </div>
+                    <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">📐 Önerilen boyut: <strong>1400 x 400
+                            piksel</strong></p>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
