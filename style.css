@@ -176,7 +176,7 @@ body {
 }
 
 .banner-slider {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -301,13 +301,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--category-padding, 1.5rem);
-    background-size: 100% auto;
-    background-position: center;
+    padding: var(--category-padding, 1.5rem) var(--spacing-lg);
+    background-size: cover;
+    background-position: right center;
     background-repeat: no-repeat;
+    background-color: #5a5a4a;
     cursor: pointer;
     position: relative;
-    min-height: 80px;
+    min-height: 70px;
     transition: all var(--transition-normal);
 }
 
