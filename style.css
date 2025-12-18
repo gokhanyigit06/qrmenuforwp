@@ -323,14 +323,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: 0 var(--spacing-lg);
     background-size: var(--category-bg-size, 100% 100%);
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #6b6b5a;
     cursor: pointer;
     position: relative;
-    min-height: var(--category-header-height, 70px);
+    height: var(--category-header-height, 70px);
     transition: all var(--transition-normal);
 }
 
@@ -338,7 +338,8 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%);
+    pointer-events: none;
 }
 
 .category-header:hover {
@@ -366,12 +367,13 @@ body {
 
 .category-name {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: var(--header-font-size, 1.5rem);
     font-weight: 700;
     color: var(--text-white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     line-height: 1.2;
     margin: 0;
+    letter-spacing: var(--header-spacing, 0);
 }
 
 .category-toggle {
