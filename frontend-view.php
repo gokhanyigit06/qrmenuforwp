@@ -38,26 +38,56 @@ $facebookLink = isset($theme_settings['facebookLink']) ? $theme_settings['facebo
         </header>
 
         <!-- Hero Banner -->
-        <section class="hero-banner">
-            <div class="banner-slider">
-                <div class="banner-slide active">
-                    <div class="banner-content">
-                        <div class="banner-pattern"></div>
-                        <h2 class="banner-title">Her gün 14:00-19:00 arası tüm kokteyllerde</h2>
-                        <div class="banner-discount">%20 <span>İNDİRİM</span></div>
-                        <div class="banner-drinks">
-                            <div class="drink-icon">🍹</div>
-                            <div class="drink-icon">🍸</div>
+        <?php
+        $banners_raw = get_option('mickey_mickeys_banners', '[]');
+        $banners = json_decode($banners_raw, true);
+        if (!$banners)
+            $banners = [];
+        $activeBanners = array_filter($banners, function ($b) {
+            return !empty($b['active']); });
+        $activeBanners = array_values($activeBanners); // Re-index
+        $bannerCount = count($activeBanners);
+        ?>
+        <?php if ($bannerCount > 0): ?>
+            <section class="hero-banner">
+                <div class="banner-slider">
+                    <?php foreach ($activeBanners as $index => $banner): ?>
+                        <div class="banner-slide <?php echo $index === 0 ? 'active' : ''; ?>" style="<?php
+                                 if (!empty($banner['width']))
+                                     echo 'max-width: ' . intval($banner['width']) . 'px;';
+                                 if (!empty($banner['height']))
+                                     echo 'height: ' . intval($banner['height']) . 'px;';
+                                 ?>">
+                            <?php if (!empty($banner['image'])): ?>
+                                <img src="<?php echo esc_url($banner['image']); ?>" alt="<?php echo esc_attr($banner['title']); ?>"
+                                    class="banner-image" style="width: 100%; height: 100%; object-fit: cover;">
+                            <?php else: ?>
+                                <div class="banner-content"
+                                    style="background: <?php echo esc_attr($banner['bgColor'] ?? '#C84B31'); ?>;">
+                                    <div class="banner-pattern"></div>
+                                    <?php if (!empty($banner['title'])): ?>
+                                        <h2 class="banner-title"><?php echo esc_html($banner['title']); ?></h2>
+                                    <?php endif; ?>
+                                    <?php if (!empty($banner['discount'])): ?>
+                                        <div class="banner-discount">%<?php echo intval($banner['discount']); ?> <span>İNDİRİM</span></div>
+                                    <?php endif; ?>
+                                    <?php if (!empty($banner['subtitle'])): ?>
+                                        <p class="banner-subtitle"><?php echo esc_html($banner['subtitle']); ?></p>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-            </div>
-            <div class="banner-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </section>
+                <?php if ($bannerCount > 1): ?>
+                    <div class="banner-dots">
+                        <?php for ($i = 0; $i < $bannerCount; $i++): ?>
+                            <span class="dot <?php echo $i === 0 ? 'active' : ''; ?>" onclick="goToSlide(<?php echo $i; ?>)"></span>
+                        <?php endfor; ?>
+                    </div>
+                <?php endif; ?>
+            </section>
+        <?php endif; ?>
     <?php endif; ?>
 
     <!-- Menu Accordion -->

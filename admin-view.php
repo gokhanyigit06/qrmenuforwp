@@ -938,8 +938,8 @@
 
             <form id="bannerForm" class="modal-body">
                 <div class="form-group">
-                    <label>Banner Başlığı *</label>
-                    <input type="text" id="bannerTitle" required>
+                    <label>Banner Başlığı (Opsiyonel)</label>
+                    <input type="text" id="bannerTitle" placeholder="Görsel banner için boş bırakın">
                 </div>
 
                 <div class="form-group">
@@ -963,6 +963,17 @@
                         <input type="text" id="bannerImage" placeholder="https://..." style="flex: 1;">
                         <button type="button" class="btn-secondary"
                             onclick="openMediaUploader('bannerImage')">Seç</button>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label>Genişlik (px)</label>
+                        <input type="number" id="bannerWidth" placeholder="Otomatik" min="100" max="2000">
+                    </div>
+                    <div class="form-group">
+                        <label>Yükseklik (px)</label>
+                        <input type="number" id="bannerHeight" placeholder="Otomatik" min="50" max="800">
                     </div>
                 </div>
 

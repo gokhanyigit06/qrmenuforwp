@@ -409,3 +409,37 @@ function renderAllergens() {
 
 // Smooth scroll
 document.documentElement.style.scrollBehavior = 'smooth';
+
+// Banner Slider Functions
+var currentSlide = 0;
+var bannerInterval = null;
+
+function goToSlide(index) {
+    var slides = document.querySelectorAll('.banner-slide');
+    var dots = document.querySelectorAll('.banner-dots .dot');
+    if (slides.length === 0) return;
+
+    currentSlide = index;
+    if (currentSlide >= slides.length) currentSlide = 0;
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+
+    slides.forEach(function (slide, i) {
+        slide.classList.toggle('active', i === currentSlide);
+    });
+
+    dots.forEach(function (dot, i) {
+        dot.classList.toggle('active', i === currentSlide);
+    });
+}
+
+function nextSlide() {
+    goToSlide(currentSlide + 1);
+}
+
+// Auto-rotate banners every 5 seconds
+document.addEventListener('DOMContentLoaded', function () {
+    var slides = document.querySelectorAll('.banner-slide');
+    if (slides.length > 1) {
+        bannerInterval = setInterval(nextSlide, 5000);
+    }
+});
