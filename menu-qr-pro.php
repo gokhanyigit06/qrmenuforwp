@@ -257,6 +257,10 @@ class MickeysQRMenu
                 echo '--category-spacing: ' . esc_attr($catSpacing) . 'px;';
                 echo '--category-padding: ' . esc_attr($catPadding) . ';';
 
+                // Category Header Height
+                $catHeaderHeight = isset($settings['categoryHeaderHeight']) ? intval($settings['categoryHeaderHeight']) : 80;
+                echo '--category-header-height: ' . esc_attr($catHeaderHeight) . 'px;';
+
                 echo '}';
 
                 // Apply Styles

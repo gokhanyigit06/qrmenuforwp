@@ -323,7 +323,7 @@ body {
     background-color: #6b6b5a;
     cursor: pointer;
     position: relative;
-    min-height: 80px;
+    min-height: var(--category-header-height, 80px);
     transition: all var(--transition-normal);
 }
 

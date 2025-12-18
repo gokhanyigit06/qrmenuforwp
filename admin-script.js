@@ -1168,6 +1168,7 @@ function saveThemeSettings() {
         headerSpacing: document.getElementById('settingHeaderSpacing').value,
         categorySpacing: document.getElementById('settingCategorySpacing').value,
         categoryPadding: document.getElementById('settingCategoryPadding').value,
+        categoryHeaderHeight: document.getElementById('settingCategoryHeaderHeight')?.value || '80',
         forceFullWidth: document.getElementById('settingForceFullWidth').checked,
 
         primaryColor: document.getElementById('settingPrimaryColor').value,
@@ -1228,6 +1229,7 @@ function loadThemeSettings() {
     if (adminThemeSettings.headerSpacing) document.getElementById('settingHeaderSpacing').value = adminThemeSettings.headerSpacing;
     if (adminThemeSettings.categorySpacing) document.getElementById('settingCategorySpacing').value = adminThemeSettings.categorySpacing;
     if (adminThemeSettings.categoryPadding) document.getElementById('settingCategoryPadding').value = adminThemeSettings.categoryPadding;
+    if (adminThemeSettings.categoryHeaderHeight && document.getElementById('settingCategoryHeaderHeight')) document.getElementById('settingCategoryHeaderHeight').value = adminThemeSettings.categoryHeaderHeight;
     if (adminThemeSettings.forceFullWidth !== undefined) document.getElementById('settingForceFullWidth').checked = adminThemeSettings.forceFullWidth;
     if (adminThemeSettings.themePreset) document.getElementById('settingThemePreset').value = adminThemeSettings.themePreset;
     if (adminThemeSettings.viewMode) document.getElementById('settingViewMode').value = adminThemeSettings.viewMode;

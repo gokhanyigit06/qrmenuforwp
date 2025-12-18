@@ -678,6 +678,13 @@
                                 <option value="large">Geniş</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label>Kategori Başlık Yüksekliği (px)</label>
+                            <input type="number" id="settingCategoryHeaderHeight" placeholder="80" value="80" min="50"
+                                max="300">
+                            <p style="font-size: 0.8rem; color: #888; margin-top: 0.25rem;">📐 Görsel daha fazla
+                                görünsün istiyorsanız yüksekliği artırın (örn: 120-150)</p>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="checkbox-label">
