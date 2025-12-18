@@ -1,0 +1,27 @@
+# WordPress
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build files
+*.zip
+build/
+dist/
+temp*/
+*_temp/
+*_build/
+
+# Local test files
+test_*/
+verify_*/

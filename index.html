@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mickey's Restaurant - Dijital Menü</title>
+    <meta name="description" content="Mickey's Restaurant dijital menüsü - Lezzetli yemeklerimizi keşfedin">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <h1 class="logo">MICKEY'S</h1>
+                <p class="tagline">Restaurant</p>
+            </div>
+            <button class="allergen-btn" id="allergenBtn">
+                ALERJENLER
+            </button>
+            <button class="contact-btn" id="contactBtn">
+                GET IN TOUCH
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="banner-slider">
+            <div class="banner-slide active">
+                <div class="banner-content">
+                    <div class="banner-pattern"></div>
+                    <h2 class="banner-title">Her gün 14:00-19:00 arası tüm kokteyllerde</h2>
+                    <div class="banner-discount">%20 <span>İNDİRİM</span></div>
+                    <div class="banner-drinks">
+                        <div class="drink-icon">🍹</div>
+                        <div class="drink-icon">🍸</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <!-- Menu Accordion -->
+    <main class="menu-accordion" id="menuAccordion">
+        <!-- Categories will be dynamically inserted here -->
+    </main>
+
+    <!-- Item Detail Modal -->
+    <div class="modal" id="itemModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Allergen Modal -->
+    <div class="modal" id="allergenModal">
+        <div class="modal-overlay" id="allergenOverlay"></div>
+        <div class="modal-content allergen-modal-content">
+            <button class="modal-close" id="allergenClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="modal-body">
+                <h2 class="allergen-title">Alerjen Bilgileri</h2>
+                <div class="allergen-list">
+                    <div class="allergen-item">
+                        <span class="allergen-icon">🥜</span>
+                        <div>
+                            <h3>Fındık ve Yerfıstığı</h3>
+                            <p>Bazı ürünlerimizde fındık, ceviz ve yerfıstığı bulunmaktadır.</p>
+                        </div>
+                    </div>
+                    <div class="allergen-item">
+                        <span class="allergen-icon">🥛</span>
+                        <div>
+                            <h3>Süt Ürünleri</h3>
+                            <p>Peynir, krema ve süt içeren ürünlerimiz mevcuttur.</p>
+                        </div>
+                    </div>
+                    <div class="allergen-item">
+                        <span class="allergen-icon">🌾</span>
+                        <div>
+                            <h3>Gluten</h3>
+                            <p>Ekmek, makarna ve hamur işi ürünlerimizde gluten bulunur.</p>
+                        </div>
+                    </div>
+                    <div class="allergen-item">
+                        <span class="allergen-icon">🦐</span>
+                        <div>
+                            <h3>Deniz Ürünleri</h3>
+                            <p>Balık ve deniz ürünleri içeren yemeklerimiz vardır.</p>
+                        </div>
+                    </div>
+                    <div class="allergen-item">
+                        <span class="allergen-icon">🥚</span>
+                        <div>
+                            <h3>Yumurta</h3>
+                            <p>Bazı ürünlerimizde yumurta kullanılmaktadır.</p>
+                        </div>
+                    </div>
+                    <div class="allergen-item">
+                        <span class="allergen-icon">🌶️</span>
+                        <div>
+                            <h3>Acı Baharatlar</h3>
+                            <p>Acılı ürünlerimiz özel olarak işaretlenmiştir.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="allergen-note">
+                    ⚠️ Alerji veya özel beslenme ihtiyacınız varsa lütfen garsonlarımıza danışınız.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Mickey's Restaurant</h3>
+                <p>Lezzet ve kalite bir arada</p>
+            </div>
+            <div class="footer-section">
+                <h4>İletişim</h4>
+                <p>📞 +90 (555) 123 45 67</p>
+                <p>📧 info@mickeys.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Çalışma Saatleri</h4>
+                <p>Pazartesi - Pazar</p>
+                <p>11:00 - 23:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mickey's Restaurant. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="menu-data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
