@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Mickey's QR Menu
  * Description: A dynamic QR Menu & Admin Panel plugin.
- * Version: 1.6.0
+ * Version: 1.7.0
  * Author: Mickey's
  * Text Domain: mickeys-qr-menu
  */
@@ -191,7 +191,7 @@ class MickeysQRMenu
                 }
 
                 echo '<style id="mickeys-dynamic-styles">';
-                echo ':root {';
+                echo '.mickeys-menu-wrapper {';
 
                 // Fonts
                 if (!empty($settings['fontPrimary']))
@@ -245,6 +245,18 @@ class MickeysQRMenu
                 echo '--header-font-size: ' . esc_attr($headerSize) . 'px;';
                 echo '--header-spacing: ' . esc_attr($headerSpacing) . 'px;';
 
+                // Category Styling
+                $catSpacing = isset($settings['categorySpacing']) ? $settings['categorySpacing'] : '10';
+                $catPaddingConf = isset($settings['categoryPadding']) ? $settings['categoryPadding'] : 'medium';
+                $catPadding = '1.5rem'; // medium
+                if ($catPaddingConf === 'small')
+                    $catPadding = '1rem';
+                if ($catPaddingConf === 'large')
+                    $catPadding = '2rem';
+
+                echo '--category-spacing: ' . esc_attr($catSpacing) . 'px;';
+                echo '--category-padding: ' . esc_attr($catPadding) . ';';
+
                 echo '}';
 
                 // Apply Styles
@@ -258,6 +270,19 @@ class MickeysQRMenu
                 echo '.header-content { max-width: var(--container-max-width) !important; margin: 0 auto; }';
                 echo '.banner-slider { max-width: var(--container-max-width) !important; margin: 0 auto; }';
                 echo '.footer .container { max-width: var(--container-max-width) !important; margin: 0 auto; }';
+
+                // Force Full Width Breakout
+                if (isset($settings['forceFullWidth']) && $settings['forceFullWidth']) {
+                    $breakoutCSS = 'width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;';
+                    echo '.mickeys-menu-wrapper { ' . $breakoutCSS . ' }';
+                    // Reset max-width for internal content
+                    echo '.mickeys-menu-wrapper > * { max-width: var(--container-max-width); margin-left: auto; margin-right: auto; }';
+                    // Except header, hero-banner and footer which handle their own width
+                    echo '.header, .hero-banner, .footer { width: 100vw; max-width: none; }';
+                    // Menu accordion needs to respect container
+                    echo '.menu-accordion { width: 100%; }';
+                }
+
                 echo '.footer-grid { max-width: var(--container-max-width) !important; margin: 0 auto; }';
 
                 // Footer

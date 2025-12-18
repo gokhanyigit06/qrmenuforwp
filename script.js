@@ -43,6 +43,10 @@ function renderMenuAccordion() {
     // Get categories that have items
     var categoriesWithItems = Object.keys(categoryConfig).filter(function (catKey) {
         return groupedItems[catKey] && groupedItems[catKey].length > 0;
+    }).sort(function (a, b) {
+        var orderA = categoryConfig[a].order !== undefined ? categoryConfig[a].order : 999;
+        var orderB = categoryConfig[b].order !== undefined ? categoryConfig[b].order : 999;
+        return orderA - orderB;
     });
 
     if (categoriesWithItems.length === 0) {
@@ -52,6 +56,7 @@ function renderMenuAccordion() {
 
     menuAccordion.innerHTML = categoriesWithItems.map(function (categoryKey) {
         var category = categoryConfig[categoryKey];
+        if (!category) return ''; // Skip if config missing
         var items = groupedItems[categoryKey] || [];
 
         return '<div class="category-section" data-category="' + categoryKey + '">' +

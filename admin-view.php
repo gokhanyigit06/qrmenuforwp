@@ -608,6 +608,33 @@
                             <input type="text" id="settingFacebookLink" placeholder="https://facebook.com/yourpage">
                         </div>
                     </div>
+
+                    <h4
+                        style="margin-top: 1.5rem; border-bottom: 1px solid #ddd; margin-bottom: 1rem; padding-bottom: 0.5rem; color: #333; grid-column: 1 / -1;">
+                        Kategori & Tab Ayarları
+                    </h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>Kategori Aralığı (px)</label>
+                            <input type="number" id="settingCategorySpacing" placeholder="10" value="10">
+                        </div>
+                        <div class="form-group">
+                            <label>Kategori İç Boşluk (Padding)</label>
+                            <select id="settingCategoryPadding">
+                                <option value="small">Dar</option>
+                                <option value="medium" selected>Orta</option>
+                                <option value="large">Geniş</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="settingForceFullWidth" checked>
+                            <span>Tam Genişliği Zorla (Kapsayıcıdan Taş)</span>
+                        </label>
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 0.25rem;">Eğer tema menüyü daraltıyorsa
+                            bunu işaretleyin.</p>
+                    </div>
                 </div>
             </div>
         </section>

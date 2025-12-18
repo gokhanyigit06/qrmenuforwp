@@ -1122,7 +1122,12 @@ function saveThemeSettings() {
         layoutWidth: document.getElementById('settingLayoutWidth').value,
         customWidth: document.getElementById('settingCustomWidth')?.value || '90',
         headerFontSize: document.getElementById('settingHeaderFontSize').value,
+        customWidth: document.getElementById('settingCustomWidth')?.value || '90',
+        headerFontSize: document.getElementById('settingHeaderFontSize').value,
         headerSpacing: document.getElementById('settingHeaderSpacing').value,
+        categorySpacing: document.getElementById('settingCategorySpacing').value,
+        categoryPadding: document.getElementById('settingCategoryPadding').value,
+        forceFullWidth: document.getElementById('settingForceFullWidth').checked,
 
         primaryColor: document.getElementById('settingPrimaryColor').value,
         secondaryColor: '#D2691E',
@@ -1176,8 +1181,13 @@ function loadThemeSettings() {
     if (adminThemeSettings.fontDisplay) document.getElementById('settingFontDisplay').value = adminThemeSettings.fontDisplay;
 
     if (adminThemeSettings.layoutWidth) document.getElementById('settingLayoutWidth').value = adminThemeSettings.layoutWidth;
+    if (adminThemeSettings.customWidth) document.getElementById('settingCustomWidth').value = adminThemeSettings.customWidth;
+    if (adminThemeSettings.headerFontSize) document.getElementById('settingHeaderFontSize').value = adminThemeSettings.headerFontSize;
     if (adminThemeSettings.headerFontSize) document.getElementById('settingHeaderFontSize').value = adminThemeSettings.headerFontSize;
     if (adminThemeSettings.headerSpacing) document.getElementById('settingHeaderSpacing').value = adminThemeSettings.headerSpacing;
+    if (adminThemeSettings.categorySpacing) document.getElementById('settingCategorySpacing').value = adminThemeSettings.categorySpacing;
+    if (adminThemeSettings.categoryPadding) document.getElementById('settingCategoryPadding').value = adminThemeSettings.categoryPadding;
+    if (adminThemeSettings.forceFullWidth !== undefined) document.getElementById('settingForceFullWidth').checked = adminThemeSettings.forceFullWidth;
 
     const setCol = (id, val) => {
         if (val) {
