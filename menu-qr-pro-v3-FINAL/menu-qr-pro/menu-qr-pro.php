@@ -119,24 +119,22 @@ class MickeysQRMenu
             $version = time();
         }
 
-        // Google Fonts - Poppins (more reliable)
-        wp_enqueue_style(
-            'mickeys-google-fonts',
-            'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap',
-            array(),
-            null
-        );
+        wp_enqueue_style('mickeys-admin-style', MICKEYS_QR_MENU_URL . 'admin-style.css', array(), $version);
 
-        wp_enqueue_style('mickeys-admin-style', MICKEYS_QR_MENU_URL . 'admin-style.css', array('mickeys-google-fonts'), $version);
-
-        // XLSX library - ALWAYS use CDN (more reliable)
-        wp_enqueue_script(
-            'xlsx',
-            'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js',
-            array(),
-            '0.18.5',
-            false  // Load in HEAD, not footer
-        );
+        // Use local XLSX library (fallback to CDN if not exists)
+        $xlsx_path = MICKEYS_QR_MENU_PATH . 'assets/js/xlsx.full.min.js';
+        if (file_exists($xlsx_path)) {
+            wp_enqueue_script('xlsx', MICKEYS_QR_MENU_URL . 'assets/js/xlsx.full.min.js', array(), '0.18.5', true);
+        } else {
+            // Fallback to CDN if local file doesn't exist
+            wp_enqueue_script(
+                'xlsx',
+                'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js',
+                array(),
+                '0.18.5',
+                true
+            );
+        }
 
         // Enqueue WP Media Uploader
         wp_enqueue_media();
@@ -157,37 +155,6 @@ class MickeysQRMenu
             'debug' => (defined('WP_DEBUG') && WP_DEBUG),
             'locale' => get_locale()
         ));
-
-        // Inline CSS for Poppins font
-        $inline_css = "
-        .section-title,
-        .main-content h1,
-        .main-content h2 {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-            font-weight: 600 !important;
-        }
-        .excel-card h3 {
-            font-family: 'Poppins', sans-serif !important;
-            font-weight: 600 !important;
-        }
-        ";
-        wp_add_inline_style('mickeys-admin-style', $inline_css);
-
-        // XLSX force check - inline script
-        $xlsx_check = "
-        (function() {
-            if (typeof XLSX === 'undefined') {
-                console.error('⚠️ XLSX not loaded, reloading...');
-                var script = document.createElement('script');
-                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';
-                script.onload = function() { console.log('✅ XLSX loaded!'); };
-                document.head.appendChild(script);
-            } else {
-                console.log('✅ XLSX ready:', typeof XLSX);
-            }
-        })();
-        ";
-        wp_add_inline_script('mickeys-admin-script', $xlsx_check, 'before');
     }
 
     public function add_admin_menu()

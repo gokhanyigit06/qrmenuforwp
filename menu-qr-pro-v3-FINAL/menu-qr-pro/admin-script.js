@@ -1912,61 +1912,30 @@ function undoPricingChange(index) {
 }
 
 window.exportToExcel = function () {
-    // Check if XLSX library is loaded
-    if (typeof XLSX === 'undefined') {
-        showNotification('Excel kütüphanesi yükleniyor, lütfen bekleyin...', 'warning');
-        // Try loading from CDN
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js';
-        script.onload = () => {
-            showNotification('Excel kütüphanesi yüklendi, tekrar deneyin', 'success');
-        };
-        script.onerror = () => {
-            showNotification('Excel kütüphanesi yüklenemedi', 'error');
-        };
-        document.head.appendChild(script);
-        return;
-    }
-
     if (!adminMenuData || adminMenuData.length === 0) {
         showNotification('Dışa aktarılacak ürün yok', 'error');
         return;
     }
 
-    try {
-        const exportData = adminMenuData.map(p => ({
-            ID: p.id,
-            Name: p.name,
-            Category: p.category,
-            Price: p.price,
-            Description: p.description,
-            Image: p.image || '',
-            Labels: p.labels ? p.labels.join(', ') : ''
-        }));
+    const exportData = adminMenuData.map(p => ({
+        ID: p.id,
+        Name: p.name,
+        Category: p.category,
+        Price: p.price,
+        Description: p.description,
+        Variants: p.variants ? p.variants.map(v => `${v.name}:${v.price}`).join(', ') : ''
+    }));
 
-        const ws = XLSX.utils.json_to_sheet(exportData);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, "Products");
-        XLSX.writeFile(wb, "mickeys_menu_products.xlsx");
-
-        showNotification(`${exportData.length} ürün Excel'e aktarıldı!`, 'success');
-    } catch (error) {
-        console.error('Excel export error:', error);
-        showNotification('Excel dosyası oluşturulamadı: ' + error.message, 'error');
-    }
+    const ws = XLSX.utils.json_to_sheet(exportData);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Products");
+    XLSX.writeFile(wb, "mickeys_menu_products.xlsx");
 };
 
 // ==================== Excel Import/Export Functions ====================
 
 // Excel file input handlers
 window.importFromExcel = function () {
-    // Check if XLSX library is loaded
-    if (typeof XLSX === 'undefined') {
-        showNotification('Excel kütüphanesi bulunamadı! Sayfa yenileniyor...', 'error');
-        setTimeout(() => location.reload(), 2000);
-        return;
-    }
-
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = '.xlsx, .xls';

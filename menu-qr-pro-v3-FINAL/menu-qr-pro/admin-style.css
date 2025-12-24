@@ -195,10 +195,8 @@
     margin-bottom: 2rem;
 }
 
-.section-title,
-.main-content h1,
-.main-content h2 {
-    font-family: var(--font-display) !important;
+.section-title {
+    font-family: var(--font-display);
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-primary);

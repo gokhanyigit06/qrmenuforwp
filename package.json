@@ -1,0 +1,33 @@
+{
+  "name": "menu-qr-pro",
+  "version": "2.0.1",
+  "description": "Professional QR Menu & Digital Menu solution for restaurants",
+  "scripts": {
+    "lint:php": "phpcs --standard=WordPress menu-qr-pro.php frontend-view.php uninstall.php",
+    "lint:js": "eslint *.js --ignore-pattern node_modules/",
+    "lint": "npm run lint:php && npm run lint:js",
+    "format:php": "phpcbf --standard=WordPress menu-qr-pro.php frontend-view.php uninstall.php",
+    "build": "npm run minify:css && npm run minify:js",
+    "minify:css": "cleancss -o style.min.css style.css && cleancss -o admin-style.min.css admin-style.css",
+    "minify:js": "uglifyjs script.js -o script.min.js -c -m && uglifyjs admin-script.js -o admin-script.min.js -c -m",
+    "package": "npm run build && npm run make-pot && npm run zip",
+    "make-pot": "wp i18n make-pot . languages/menu-qr-pro.pot",
+    "zip": "node build-zip.js",
+    "test": "phpunit",
+    "test:watch": "phpunit --watch"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "uglify-js": "^3.17.4",
+    "eslint": "^8.50.0"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "qr-menu",
+    "restaurant",
+    "digital-menu"
+  ],
+  "author": "Luiff Dev",
+  "license": "GPL-2.0-or-later"
+}

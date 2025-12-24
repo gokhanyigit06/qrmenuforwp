@@ -1,0 +1,307 @@
+# Turkish translation for Menu QR Pro.
+# Copyright (C) 2024 Menu QR Pro
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Menu QR Pro 2.0.0\n"
+"Report-Msgid-Bugs-To: https://yourwebsite.com/support\n"
+"POT-Creation-Date: 2025-12-23 12:27:00+0000\n"
+"PO-Revision-Date: 2025-12-23 12:52+0300\n"
+"Last-Translator: \n"
+"Language-Team: Turkish\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.8\n"
+
+#: menu-qr-pro.php:120
+msgid "Menu Admin"
+msgstr "Menü Yönetimi"
+
+#: menu-qr-pro.php:121
+msgid "QR Menu Panel"
+msgstr "QR Menü Paneli"
+
+#: menu-qr-pro.php:170
+msgid "Unauthorized access"
+msgstr "Yetkisiz erişim"
+
+#: menu-qr-pro.php:177
+msgid "Missing required parameters"
+msgstr "Gerekli parametreler eksik"
+
+#: menu-qr-pro.php:183
+#, php-format
+msgid "Invalid JSON: %s"
+msgstr "Geçersiz JSON: %s"
+
+#: menu-qr-pro.php:196
+msgid "Failed to save data"
+msgstr "Veri kaydedilemedi"
+
+#: menu-qr-pro.php:199
+msgid "Data saved successfully"
+msgstr "Veri başarıyla kaydedildi"
+
+#: menu-qr-pro.php:217
+msgid "Missing key parameter"
+msgstr "Anahtar parametresi eksik"
+
+#: admin-view.php:14 admin-view.php:79
+msgid "Product Management"
+msgstr "Ürün Yönetimi"
+
+#: admin-view.php:24
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: admin-view.php:32
+msgid "Allergens"
+msgstr "Alerjenler"
+
+#: admin-view.php:40
+msgid "Banner Management"
+msgstr "Banner Yönetimi"
+
+#: admin-view.php:51
+msgid "Excel Operations"
+msgstr "Excel İşlemleri"
+
+#: admin-view.php:59 admin-view.php:258
+msgid "Price Change"
+msgstr "Fiyat Değişimi"
+
+#: admin-view.php:69
+msgid "Visual Settings"
+msgstr "Görsel Düzenlemeler"
+
+#: admin-view.php:88
+msgid "Excel"
+msgstr "Excel"
+
+#: admin-view.php:96 admin-view.php:743
+msgid "Add New Product"
+msgstr "Yeni Ürün Ekle"
+
+#: admin-view.php:107
+msgid "Search product..."
+msgstr "Ürün ara..."
+
+#: admin-view.php:111
+msgid "All Categories"
+msgstr "Tüm Kategoriler"
+
+#: admin-view.php:129
+msgid "Select Bulk Action"
+msgstr "Toplu İşlem Seç"
+
+#: admin-view.php:130
+msgid "Delete Selected"
+msgstr "Seçilenleri Sil"
+
+#: admin-view.php:131
+msgid "Assign Tag/Allergen"
+msgstr "Etiket/Alerjen Ata"
+
+#: admin-view.php:132
+msgid "Change Category"
+msgstr "Kategori Değiştir"
+
+#: admin-view.php:134 admin-view.php:316
+msgid "Apply"
+msgstr "Uygula"
+
+#: admin-view.php:173
+msgid "Add New Category"
+msgstr "Yeni Kategori Ekle"
+
+#: admin-view.php:191
+msgid "Add New Allergen"
+msgstr "Yeni Alerjen Ekle"
+
+#: admin-view.php:209
+msgid "Add New Banner"
+msgstr "Yeni Banner Ekle"
+
+#: admin-view.php:227
+msgid "Import from Excel"
+msgstr "Excel'den İçe Aktar"
+
+#: admin-view.php:228
+msgid "Upload Excel file for bulk product update"
+msgstr "Toplu ürün güncellemesi için Excel dosyası yükleyin"
+
+#: admin-view.php:231
+msgid "Select File"
+msgstr "Dosya Seç"
+
+#: admin-view.php:237
+msgid "Export to Excel"
+msgstr "Excel'e Aktar"
+
+#: admin-view.php:238
+msgid "Download current products as Excel file"
+msgstr "Mevcut ürünleri Excel dosyası olarak indirin"
+
+#: admin-view.php:240
+msgid "Download Excel"
+msgstr "Excel İndir"
+
+#: admin-view.php:246 admin-view.php:249
+msgid "Download Template"
+msgstr "Şablon İndir"
+
+#: admin-view.php:247
+msgid "Download Excel template for product addition"
+msgstr "Ürün ekleme için Excel şablonunu indirin"
+
+#: admin-view.php:266
+msgid "Percentage Price Change"
+msgstr "Yüzdelik Fiyat Değişimi"
+
+#: admin-view.php:268
+msgid ""
+"Increase or decrease price of all products or selected category by "
+"percentage."
+msgstr ""
+"Tüm ürünlerin veya seçili kategorinin fiyatlarını yüzdelik olarak artırın "
+"veya azaltın."
+
+#: admin-view.php:273 admin-view.php:767
+msgid "Select Category"
+msgstr "Kategori Seçin"
+
+#: admin-view.php:281
+msgid "Change Percentage (%)"
+msgstr "Değişim Yüzdesi (%)"
+
+#: admin-view.php:287
+msgid "Positive = increase, Negative = decrease"
+msgstr "Pozitif = artış, Negatif = azalış"
+
+#: admin-view.php:291 admin-view.php:309
+#, fuzzy
+msgid "Preview"
+msgstr ""
+"#-#-#-#-#  catalog.po (Menu QR Pro 2.0.0)  #-#-#-#-#\n"
+"Önizleme\n"
+"#-#-#-#-#  catalog.po (Menu QR Pro 2.0.0)  #-#-#-#-#\n"
+"Önizle"
+
+#: admin-view.php:326
+msgid "Price Rounding"
+msgstr "Fiyat Yuvarlama"
+
+#: admin-view.php:328
+msgid "Round prices to nearest value for clean pricing."
+msgstr "Fiyatları en yakın değere yuvarlayarak düzgün fiyatlar oluşturun."
+
+#: admin-view.php:423
+msgid "Save Settings"
+msgstr "Ayarları Kaydet"
+
+#: admin-view.php:434
+msgid "Theme Presets"
+msgstr "Hazır Tema Seç"
+
+#: admin-view.php:717
+msgid "Confirmation"
+msgstr "Onay"
+
+#: admin-view.php:727
+msgid "Are you sure you want to perform this action?"
+msgstr "Bu işlemi gerçekleştirmek istediğinizden emin misiniz?"
+
+#: admin-view.php:732 admin-view.php:838
+msgid "Cancel"
+msgstr "İptal"
+
+#: admin-view.php:733
+msgid "Confirm"
+msgstr "Onayla"
+
+#: admin-view.php:755
+msgid "Product Name (Turkish) *"
+msgstr "Ürün Adı (Türkçe) *"
+
+#: admin-view.php:760
+msgid "Product Name (English)"
+msgstr "Ürün Adı (İngilizce)"
+
+#: admin-view.php:765
+msgid "Category *"
+msgstr "Kategori *"
+
+#: admin-view.php:783
+msgid "Price (₺) *"
+msgstr "Fiyat (₺) *"
+
+#: admin-view.php:788
+msgid "Description"
+msgstr "Açıklama"
+
+#: admin-view.php:795
+msgid "No Image (hide image in list)"
+msgstr "Görsel Yok (listede görsel gizlenir)"
+
+#: admin-view.php:797
+msgid "Image URL"
+msgstr "Görsel URL"
+
+#: admin-view.php:807
+msgid "Spicy"
+msgstr "Acılı"
+
+#: admin-view.php:813
+msgid "Vegetarian"
+msgstr "Vejetaryen"
+
+#: admin-view.php:821
+msgid "Variants"
+msgstr "Varyantlar"
+
+#: admin-view.php:822
+msgid "Add product variants (e.g., sizes, options)"
+msgstr "Ürün varyantları ekleyin (örn. boyutlar, seçenekler)"
+
+#: admin-view.php:834
+msgid "Add Variant"
+msgstr "Varyant Ekle"
+
+#: admin-view.php:839
+msgid "Save Product"
+msgstr "Ürünü Kaydet"
+
+#: frontend-view.php:31
+msgid "ALLERGENS"
+msgstr "ALERJENLER"
+
+#: frontend-view.php:34
+msgid "GET IN TOUCH"
+msgstr "İLETİŞİM"
+
+#: frontend-view.php:153
+msgid "Contact"
+msgstr "İletişim"
+
+#: frontend-view.php:158
+msgid "Working Hours"
+msgstr "Çalışma Saatleri"
+
+#: frontend-view.php:163
+msgid "Get in Touch"
+msgstr "Bize Ulaşın"
+
+#: frontend-view.php:132
+msgid "Allergen Information"
+msgstr "Alerjen Bilgileri"
+
+#: frontend-view.php:139
+msgid ""
+"⚠️ If you have any allergies or special dietary needs, please consult our "
+"staff."
+msgstr ""
+"⚠️ Alerji veya özel beslenme ihtiyacınız varsa lütfen garsonlarımıza "
+"danışınız."
